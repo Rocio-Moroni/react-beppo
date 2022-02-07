@@ -1,0 +1,41 @@
+.NavBar {
+    background-color: #5d6771;
+    height: 100px;
+    color: white;
+}
+
+.NavBarContent {
+    display: flex;
+    padding-top: 2%;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 4%;
+    margin-left: 4%;
+
+}
+
+.NavBarLogo {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em;
+}
+
+.NavBarMenu {
+    display: flex;
+    list-style: none;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.NavBarIcons {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 70px;
+}

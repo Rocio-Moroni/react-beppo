@@ -1,5 +1,10 @@
+/* Font Family*/
+    /* QuickSand */
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Quicksand:wght@300;400&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .App-logo {
