@@ -1,8 +1,12 @@
-// CSS import
-import './CartWidget.css'
+/* IMPORTS */
 
+// CSS import
+import './CartWidget.css';
 // Icons import
 import { IoCartOutline } from "react-icons/io5";
+
+
+/* COMPONENTS */
 
 // CartWidget component
 const CartWidget = () => {
@@ -15,6 +19,6 @@ const CartWidget = () => {
             </li>
         </ul>
     )
-}
+};
 
-export default CartWidget
+export default CartWidget;

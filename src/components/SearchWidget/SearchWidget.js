@@ -1,8 +1,12 @@
-// CSS import
-import './SearchWidget.css'
+/* IMPORTS */
 
+// CSS import
+import './SearchWidget.css';
 // Icons import
 import { IoIosSearch } from "react-icons/io";
+
+
+/* COMPONENTS */
 
 // SearchWidget component
 const SearchWidget = () => {
@@ -14,6 +18,6 @@ const SearchWidget = () => {
             </li>
         </ul>
     )
-}
+};
 
-export default SearchWidget
+export default SearchWidget;

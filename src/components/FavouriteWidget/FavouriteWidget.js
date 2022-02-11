@@ -1,8 +1,12 @@
-// CSS import
-import './FavouriteWidget.css'
+/* IMPORTS */
 
+// CSS import
+import './FavouriteWidget.css';
 // Icons import
 import { IoHeartOutline } from "react-icons/io5";
+
+
+/* COMPONENTS */
 
 // FavouriteWidget component
 const FavouriteWidget = () => {
@@ -14,6 +18,6 @@ const FavouriteWidget = () => {
             </li>
         </ul>
     )
-}
+};
 
-export default FavouriteWidget
+export default FavouriteWidget;

@@ -1,8 +1,14 @@
+/* IMPORTS */
+
 // CSS import
-import './NavBar.css'
-import SearchWidget from '../SearchWidget/SearchWidget'
-import FavouriteWidget from '../FavouriteWidget/FavouriteWidget'
-import CartWidget from '../CartWidget/CartWidget'
+import './NavBar.css';
+// Components import
+import SearchWidget from '../SearchWidget/SearchWidget';
+import FavouriteWidget from '../FavouriteWidget/FavouriteWidget';
+import CartWidget from '../CartWidget/CartWidget';
+
+
+/* COMPONENTS */
 
 // NavBar component
 const NavBar = () => {
@@ -29,6 +35,6 @@ const NavBar = () => {
             </div>
         </nav>
     )
-}
+};
 
-export default NavBar
+export default NavBar;
