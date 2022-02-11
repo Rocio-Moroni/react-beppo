@@ -13,11 +13,11 @@ const ItemListContainer = ({greeting}) => {
 
     // OnAdd function
     const onAdd = (count) => {
-        if(count > 1){
+        if (count > 1) {
         console.log(`Se agregaron ${count} artículos a tu carrito de compra`);
         } else {
             console.log(`Se agregó ${count} artículo a tu carrito de compra`);
-        };
+        }
     };
 
     return (
