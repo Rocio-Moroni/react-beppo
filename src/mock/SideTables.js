@@ -26,7 +26,7 @@ export const sideTables = [
         price: 34800,
         height: '40cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644788037/BEPPO/copa-l-11-9eeac790f0b9b086ee16400482789963-640-0_pat5pm.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644936944/BEPPO/64819352_2344563952485788_5103452000894239372_n_qg5xhz.jpg',
         category: 'Side Tables',
     },
     {
@@ -46,7 +46,7 @@ export const sideTables = [
         price: 34800,
         height: '40cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644791874/BEPPO/cork-11-da97b7260cf6e286b416400486967853-640-0_qfcfei.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644937963/BEPPO/39525904_458570811219289_2487160838935281664_n_nn80qt.jpg',
         category: 'Side Tables',
     },
     {
@@ -56,7 +56,7 @@ export const sideTables = [
         price: 51800,
         height: '42cm',
         diameter: '36cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644791947/BEPPO/11122021-img_97821-fbde7ffd6495c41ab916423588899896-640-0_xuurta.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1644791947/BEPPO/11122021-img_97821-fbde7ffd6495c41ab916423588899896-640-0_xuurta.jpg',
         category: 'Side Tables',
     },
     {
@@ -86,7 +86,7 @@ export const sideTables = [
         price: 36700,
         height: '45cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644792153/BEPPO/oslo-11-d6b7c07d8de358163f16400489030759-640-0_r4bbmt.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644938487/BEPPO/69105830_500227924098055_2127601960772233844_n_syirrg.jpg',
         category: 'Side Tables',
     },
     {
@@ -106,7 +106,7 @@ export const sideTables = [
         price: 34700,
         height: '45cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644792270/BEPPO/slim-11-d0f7518e06b0fe5cab16400480361982-640-0_ce3uea.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644937787/BEPPO/93336300_641705690010995_6527216956869845895_n_vl2uww.jpg',
         category: 'Side Tables',
     },
     {
@@ -126,7 +126,7 @@ export const sideTables = [
         price: 33600,
         height: '35cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644792389/BEPPO/sphere-11-e10b053ce54ee4a7d216400484821947-640-0_kmffoi.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644937273/BEPPO/103549893_583378222319273_1164228564251237408_n_xyirny.jpg',
         category: 'Side Tables',
     },
     {
@@ -146,7 +146,7 @@ export const sideTables = [
         price: 38500,
         height: '30cm',
         diameter: '45cm',
-        img: '',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1644935376/BEPPO/sphere-m-xl-11-844620c8bcc88fdf3216429845706015-480-0_tq82ob.jpg',
         category: 'Side Tables',
     },
     {
@@ -166,7 +166,7 @@ export const sideTables = [
         price: 64000,
         height: '60cm',
         diameter: '32cm',
-        img: '',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1644934775/BEPPO/sphere-tall-11-75d3371e9c39979f0e16426802631752-480-0-2_znl7nq.jpg',
         category: 'Side Tables',
     },
     {
@@ -176,7 +176,7 @@ export const sideTables = [
         price: 50300,
         height: '39cm',
         diameter: '36cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644793018/BEPPO/40192143_285538675368041_4490551856027664384_n_racank.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1644793018/BEPPO/40192143_285538675368041_4490551856027664384_n_racank.jpg',
         category: 'Side Tables',
     },
     {
@@ -186,7 +186,7 @@ export const sideTables = [
         price: 51300,
         height: '60cm',
         diameter: '30cm',
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644793112/BEPPO/41594621_290714188183823_5362129462030761984_n_smquyp.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,g_south_west,h_854,w_640,x_147,y_90/v1644938315/BEPPO/94935249_2651030371776431_7196098986275875730_n_bm9k1g.jpg',
         category: 'Side Tables',
     },
     {

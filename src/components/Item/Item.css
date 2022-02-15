@@ -1,3 +1,35 @@
-.ItemImg {
-    width: 30%;
+.Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19.2%;
+    height: 510px;
+    margin: 1%;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
 }
+
+h4 {
+    text-transform: uppercase;
+    padding-bottom: 4%;
+}
+
+.ItemImg {
+    width: 250px;
+    margin-top: 2%;
+    border-radius: 2%;
+}
+
+.ItemPrice {
+    font-weight: bold;
+}
+
+.ItemDimensions {
+    display: flex;
+    justify-content: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    font-size: 0.7em;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+

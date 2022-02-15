@@ -2,22 +2,37 @@
 
 // CSS import
 import './Item.css'
+// Component import
+import ItemCount from '../ItemCount/ItemCount';
 
 
 /* COMPONENTS */
 
 // Item component
-const Item = ({itemName, stock, price, height, diameter, size, img}) => {
+const Item = ({itemName, stock, price, height, diameter, side, img}) => {
+
+    // OnAdd function
+    const onAdd = (count) => {
+        if (count > 1) {
+        console.log(`Se agregaron ${count} artículos a tu carrito de compra`);
+        } else {
+            console.log(`Se agregó ${count} artículo a tu carrito de compra`);
+        }
+    };
 
     // Stock function
 
 
+
     return (
         <div className='Item'>
-            <h4>{itemName}</h4>
-            <img className='ItemImg' src={img}/>
-            <p>AR${price}</p>
-            <p>Dimensions: Height: {height}, Diameter: {diameter}, Size: {size}</p>
+            <div>
+                <h4>{itemName}</h4>
+                <img className='ItemImg' src={img}/>
+                <p className='ItemPrice'>AR${price}</p>
+                <p className='ItemDimensions'>Height: {height} - Diameter: {diameter}{side}</p>
+                <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+            </div>
         </div>
     )
 };

@@ -5,6 +5,7 @@ import './ItemListContainer.css';
 // Component import
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
+import Spinner from '../Spinner/Spinner';
 // Products import
 import { bringSideTables } from '../../mock/SideTables';
 // React import
@@ -36,10 +37,12 @@ const ItemListContainer = ({greeting}) => {
     return (
         <>
             {loading ? (
-                <h3>cargando</h3>
+                <>
+                <Spinner />
+                </>
             ) : (
                 <>
-                    <h1> {greeting} </h1>
+                    {/* <h1> {greeting} </h1> */}
                     <ItemList sideTables={sideTables} />
                 </>
             )}

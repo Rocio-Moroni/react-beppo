@@ -1,4 +1,72 @@
 .ItemCountButtons {
     display: flex;
     justify-content: center;
+    margin-bottom: 5%;
+}
+
+/* Buttons + - */
+.DecrementButton, .IncrementButton {
+    cursor: pointer;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    color: #090909;
+    font-size: 0.9em;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 0.5px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 2px 2px 4px #c5c5c5,
+                -2px -2px 4px #ffffff;
+}
+.DecrementButton:active {
+    color: #666;
+    box-shadow: inset 2px 2px 4px #c5c5c5,
+                inset -2px -2px 4px #ffffff;
+}
+.IncrementButton:active {
+    color: #666;
+    box-shadow: inset 2px 2px 4px #c5c5c5,
+                inset -2px -2px 4px #ffffff;
+}
+
+/* Button .ItemCountAddItems */
+.ItemCountAddItems {
+    font-size: 0.7em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.ItemCountAddItems:after {
+    content: "";
+    background-color: #a0a598;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.ItemCountAddItems:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+@media (min-width: 768px) {
+    .ItemCountAddItems {
+        padding: 13px 50px 13px;
+    }
 }

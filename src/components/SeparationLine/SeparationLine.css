@@ -1,0 +1,6 @@
+hr {
+    display: inline-block;
+    border-width: 1px;
+    color: rgb(143, 143, 143);
+    width: 90%;
+}

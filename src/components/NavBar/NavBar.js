@@ -6,6 +6,7 @@ import './NavBar.css';
 import SearchWidget from '../SearchWidget/SearchWidget';
 import FavouriteWidget from '../FavouriteWidget/FavouriteWidget';
 import CartWidget from '../CartWidget/CartWidget';
+import SeparationLine from '../SeparationLine/SeparationLine';
 
 
 /* COMPONENTS */
@@ -16,10 +17,24 @@ const NavBar = () => {
     return (
         <nav className="NavBar">
             <div className="NavBarContent">
-                <div className="NavBarLogo">
-                    <h3><a href="#">Beppo</a></h3>
+                <div className="NavBarSearch">
+                    <SearchWidget />
                 </div>
-                <div>
+
+                <div className="NavBarIcons">
+                    <FavouriteWidget />
+                    <CartWidget />
+                </div>
+
+                <div className="NavBarLogo">
+                    <h2><a href="#">beppo</a></h2>
+                </div>
+
+                <div className="SeparationLine1">
+                    <SeparationLine />
+                </div>
+
+                <div className="NavBarMenuContainer">
                     <ul className="NavBarMenu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Side Tables</a></li>
@@ -27,10 +42,9 @@ const NavBar = () => {
                         <li><a href="#">Cutting Boards</a></li>
                     </ul>
                 </div>
-                <div className="NavBarIcons">
-                    <SearchWidget />
-                    <FavouriteWidget />
-                    <CartWidget />
+
+                <div className="SeparationLine2">
+                    <SeparationLine />
                 </div>
             </div>
         </nav>
