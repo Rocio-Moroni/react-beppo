@@ -8,7 +8,7 @@ import Item from '../Item/Item';
 
 /* COMPONENTS */
 
-// ItemList component
+// ItemList component, método map
 const ItemList = ({sideTables}) => {
 
     return (

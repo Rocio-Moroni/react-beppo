@@ -21,7 +21,7 @@ const Item = ({itemName, stock, price, height, diameter, side, img}) => {
     };
 
     // Stock function
-
+    console.log(itemName)
 
 
     return (

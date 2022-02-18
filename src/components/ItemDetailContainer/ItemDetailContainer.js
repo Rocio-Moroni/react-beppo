@@ -1,9 +1,9 @@
 /* IMPORTS */
 
 // CSS import
-import './ItemListContainer.css';
+import './ItemDetailContainer.css';
 // Component import
-import ItemList from '../ItemList/ItemList';
+import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 // Products import
 import { getSideTables } from '../../mock/SideTables';
@@ -13,8 +13,8 @@ import { useEffect, useState } from 'react';
 
 /* COMPONENTS */
 
-// ItemListContainer component
-const ItemListContainer = ({greeting}) => {
+// ItemDetailContainer component
+const ItemDetailContainer = ({greeting}) => {
     // useState Hook
     const [sideTables, setSideTables] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -42,11 +42,11 @@ const ItemListContainer = ({greeting}) => {
             ) : (
                 <>
                     {/* <h1> {greeting} </h1> */}
-                    <ItemList sideTables={sideTables} />
+                    <ItemDetail sideTables={sideTables} />
                 </>
             )}
         </>
     );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

@@ -1,3 +1,4 @@
+
 export const sideTables = [
     {
         id: 1,
@@ -6,6 +7,7 @@ export const sideTables = [
         price: 37800,
         height: '48cm',
         diameter: '28cm',
+        woodType: ['Carne de vaca', 'Cedro', 'Guatambu', 'Guayubira', 'Laurel', 'Loro negro', 'Oveña', 'Zoita'],
         img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644784390/BEPPO/balloon-11-90f987b967ea7d644616400477002541-640-0_rwfgyd.jpg',
         category: 'Side Tables',
     },
@@ -16,6 +18,7 @@ export const sideTables = [
         price: 31800,
         height: '40cm',
         diameter: '30cm',
+        woodType: ['Carne de vaca', 'Cedro', 'Guatambu', 'Guayubira', 'Laurel', 'Loro negro', 'Oveña', 'Zoita'],
         img: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1644784597/BEPPO/cono-11-6912d5890412dd178516400486446031-640-0_xozvxl.jpg',
         category: 'Side Tables',
     },
@@ -26,6 +29,7 @@ export const sideTables = [
         price: 34800,
         height: '40cm',
         diameter: '30cm',
+        woodType: ['Carne de vaca', 'Cedro', 'Guatambu', 'Guayubira', 'Laurel', 'Loro negro', 'Oveña', 'Zoita'],
         img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644936944/BEPPO/64819352_2344563952485788_5103452000894239372_n_qg5xhz.jpg',
         category: 'Side Tables',
     },
@@ -47,6 +51,9 @@ export const sideTables = [
         height: '40cm',
         diameter: '30cm',
         img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644937963/BEPPO/39525904_458570811219289_2487160838935281664_n_nn80qt.jpg',
+        img1: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645142276/BEPPO/44193992_258294028192974_3686404216824811478_n_otj5xj.jpg',
+        img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,g_face,h_854,w_640,x_0/v1645142275/BEPPO/32915736_998208843671587_8601271789537984512_n_vnr4z8.jpg',
+        img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645142276/BEPPO/65666850_1066932887029425_7995779727983744930_n_y9zz9r.jpg',
         category: 'Side Tables',
     },
     {
@@ -202,8 +209,16 @@ export const sideTables = [
 ]
 
 
-export const bringSideTables = new Promise ((resolve, reject) => {
+// Obtain all the products from Side Tables List
+export const getSideTables = new Promise ((resolve, reject) => {
     setTimeout (() => {
         resolve (sideTables);
+    }, 2000);
+});
+
+// Obtain just one product from Side Tables list
+export const getSideTable = new Promise ((resolve, reject) => {
+    setTimeout (() => {
+        resolve (sideTables[4]);
     }, 2000);
 });
