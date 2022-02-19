@@ -6,7 +6,7 @@ import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 // Products import
-import { getSideTables } from '../../mock/SideTables';
+import { getSideTable } from '../../mock/SideTables';
 // React import
 import { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ const ItemDetailContainer = ({greeting}) => {
 
     // useEffect Hook
     useEffect(() => {
-        getSideTables
+        getSideTable
             .then((response) => {
                 setSideTables(response);
             })
@@ -42,7 +42,7 @@ const ItemDetailContainer = ({greeting}) => {
             ) : (
                 <>
                     {/* <h1> {greeting} </h1> */}
-                    <ItemDetail sideTables={sideTables} />
+                    <ItemDetail {...sideTables} />
                 </>
             )}
         </>

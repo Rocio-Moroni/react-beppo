@@ -1,0 +1,37 @@
+.Dropdown {
+    width: 175px;
+    margin-top: 2%;
+    position: relative;
+    user-select: none;
+}
+
+.Dropdown .DropdownBtn {
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 2px 2px 4px #c5c5c5;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.Dropdown .DropdownOptions {
+    width: 175px;
+    top: 110%;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 4px #c5c5c5;
+    color: #333;
+    text-align: left;
+}
+
+.Dropdown .DropdownOptions .DropdownItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.Dropdown .DropdownOptions .DropdownItem:hover {
+    background: #a0a598;
+    color: white;
+}

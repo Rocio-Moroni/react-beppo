@@ -3,7 +3,10 @@
 // CSS import
 import './ItemDetail.css'
 // Component import
+import SeparationLine from '../SeparationLine/SeparationLine';
 import ItemCount from '../ItemCount/ItemCount';
+import Dropdown from '../Dropdown/Dropdown';
+import { useState } from 'react';
 
 
 
@@ -21,29 +24,35 @@ const ItemDetail = ({itemName, stock, price, height, woodType, diameter, side, i
         }
     };
 
-    // Stock function
-console.log(itemName)
+    // Selected hook
+    const [selected, setSelected] = useState("Wood Type");
 
 
     return (
-        <div className='ItemDetail'>
-            <div>
-                <div className='ItemImages'>
-                    <img className='ItemImg' src={img}/>
-                    <div className='ItemCaroussel'>
-                        <img className='ItemImgCaroussel' src={img1}/>
-                        <img className='ItemImgCaroussel' src={img2}/>
-                        <img className='ItemImgCaroussel' src={img3}/>
-                    </div>
+        <article className='ItemDetail'>
+            <picture className='ItemImages'>
+                <img className='ItemImgBig' src={img}/>
+                <div className='ItemCaroussel'>
+                    <img className='ItemImgCaroussel' src={img1}/>
+                    <img className='ItemImgCaroussel' src={img2}/>
+                    <img className='ItemImgCaroussel' src={img3}/>
                 </div>
-                <div className='ItemDetailDescription'>
-                    <h4>{itemName}</h4>
-                    <p className='ItemPrice'>AR${price}</p>
-                    <p className='ItemDescription'> We design and make monopieces of turned wood, each one of them is unique! Our Cork side table has a height of {height} and a diameter of {diameter}{side}.</p>
+            </picture>
+            <section className='ItemDetailDescription'>
+                <h4>{itemName}</h4>
+                <p className='ItemPrice'>AR${price}</p>
+                <p className='ItemDescription'> We design and make monopieces of turned wood, each one of them is unique! Our Cork side table has a height of {height} and a diameter of {diameter}{side}.</p>
+                <div className='SeparationLine'>
+                    <SeparationLine />
+                </div>
+                <div>
+                    <Dropdown selected={selected} setSelected={setSelected} />
+                </div>
+                <div className='ItemCount'>
                     <ItemCount stock={stock} initial={1} onAdd={onAdd} />
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     )
 };
 export default ItemDetail;

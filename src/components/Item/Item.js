@@ -2,8 +2,6 @@
 
 // CSS import
 import './Item.css'
-// Component import
-import ItemCount from '../ItemCount/ItemCount';
 
 
 /* COMPONENTS */
@@ -21,17 +19,16 @@ const Item = ({itemName, stock, price, height, diameter, side, img}) => {
     };
 
     // Stock function
-    console.log(itemName)
 
 
     return (
         <div className='Item'>
             <div>
-                <h4>{itemName}</h4>
+                <h6>{itemName}</h6>
                 <img className='ItemImg' src={img}/>
-                <p className='ItemPrice'>AR${price}</p>
+                <p className='ItemPrices'>AR${price}</p>
                 <p className='ItemDimensions'>Height: {height} - Diameter: {diameter}{side}</p>
-                <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+                <button className="ItemCountAddItems">See more</button>
             </div>
         </div>
     )

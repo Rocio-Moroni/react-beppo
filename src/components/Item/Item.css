@@ -8,9 +8,11 @@
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
 }
 
-h4 {
+h6 {
     text-transform: uppercase;
     padding-bottom: 4%;
+    font-size: 1em;
+
 }
 
 .ItemImg {
@@ -19,8 +21,9 @@ h4 {
     border-radius: 2%;
 }
 
-.ItemPrice {
+.ItemPrices {
     font-weight: bold;
+    font-size: 1em;
 }
 
 .ItemDimensions {

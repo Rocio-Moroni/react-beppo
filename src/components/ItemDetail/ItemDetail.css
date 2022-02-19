@@ -1,0 +1,71 @@
+.ItemDetail {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.ItemImages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    justify-content: center;
+}
+
+.ItemImgBig {
+    display: flex;
+    width: 400px;
+    border-radius: 2%;
+}
+
+.ItemCaroussel {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-top: 3%;
+}
+
+.ItemImgCaroussel {
+    width: 125px;
+    border-radius: 5%;
+    transition: all 500ms ease;
+
+}
+.ItemImgCaroussel:hover {
+    transform: scale(1.2);
+}
+
+.ItemDetailDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2%;
+    margin-top: 1.9%;
+    width: 40%;
+}
+
+h4 {
+    font-size: 1.5em;
+    padding-bottom: 0%;
+}
+
+.ItemPrice {
+    font-size: 1.5em;
+}
+
+.ItemDescription {
+    width: 500px;
+    text-align: left;
+    margin-top: 5%;
+}
+
+.SeparationLine {
+    display: flex;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.ItemCount {
+    margin-top: 5%;
+}
