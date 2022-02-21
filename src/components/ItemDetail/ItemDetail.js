@@ -13,7 +13,7 @@ import { useState } from 'react';
 /* COMPONENTS */
 
 // Item component
-const ItemDetail = ({itemName, stock, price, height, woodType, diameter, side, img, img1, img2, img3}) => {
+const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
 
     // OnAdd function
     const onAdd = (count) => {
@@ -41,7 +41,10 @@ const ItemDetail = ({itemName, stock, price, height, woodType, diameter, side, i
             <section className='ItemDetailDescription'>
                 <h4>{itemName}</h4>
                 <p className='ItemPrice'>AR${price}</p>
-                <p className='ItemDescription'> We design and make monopieces of turned wood, each one of them is unique! Our Cork side table has a height of {height} and a diameter of {diameter}{side}.</p>
+                <p className='ItemDescription'> We design and make monopieces of turned wood, each one of them is <strong> Unique! </strong>.<br/>
+                <br/> Our "{itemName}" has the following dimensions: {dimensions}.
+                <br/> {info}.
+                </p>
                 <div className='SeparationLine'>
                     <SeparationLine />
                 </div>

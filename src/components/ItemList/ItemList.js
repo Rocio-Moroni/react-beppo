@@ -9,12 +9,12 @@ import Item from '../Item/Item';
 /* COMPONENTS */
 
 // ItemList component, método map
-const ItemList = ({sideTables}) => {
+const ItemList = ({ products }) => {
 
     return (
         <div className='ItemList'>
-            {sideTables.map((product) => (
-                <Item {...product} key={product.id} />
+            {products.map(product => (
+                <Item {...product} key={product.id}/>
             ))}
         </div>
     )

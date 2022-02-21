@@ -6,24 +6,26 @@ import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 // Products import
-import { getSideTable } from '../../mock/SideTables';
+import { getSingleProduct } from '../../mock/Products';
 // React import
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 
 
 /* COMPONENTS */
 
 // ItemDetailContainer component
-const ItemDetailContainer = ({greeting}) => {
+const ItemDetailContainer = () => {
     // useState Hook
-    const [sideTables, setSideTables] = useState([]);
+    const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { productId } = useParams()
 
     // useEffect Hook
     useEffect(() => {
-        getSideTable
+        getSingleProduct (productId)
             .then((response) => {
-                setSideTables(response);
+                setProduct(response);
             })
             .catch((error) => {
                 console.log(error);
@@ -31,7 +33,7 @@ const ItemDetailContainer = ({greeting}) => {
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [productId]);
 
     return (
         <>
@@ -42,7 +44,7 @@ const ItemDetailContainer = ({greeting}) => {
             ) : (
                 <>
                     {/* <h1> {greeting} </h1> */}
-                    <ItemDetail {...sideTables} />
+                    <ItemDetail {...product} />
                 </>
             )}
         </>

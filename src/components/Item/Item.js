@@ -1,22 +1,15 @@
 /* IMPORTS */
 
 // CSS import
-import './Item.css'
+import './Item.css';
+// React import
+import { Link } from 'react-router-dom';
 
 
 /* COMPONENTS */
 
 // Item component
-const Item = ({itemName, stock, price, height, diameter, side, img}) => {
-
-    // OnAdd function
-    const onAdd = (count) => {
-        if (count > 1) {
-        console.log(`Se agregaron ${count} artículos a tu carrito de compra`);
-        } else {
-            console.log(`Se agregó ${count} artículo a tu carrito de compra`);
-        }
-    };
+const Item = ({id, itemName, stock, price, dimensions, img}) => {
 
     // Stock function
 
@@ -27,8 +20,8 @@ const Item = ({itemName, stock, price, height, diameter, side, img}) => {
                 <h6>{itemName}</h6>
                 <img className='ItemImg' src={img}/>
                 <p className='ItemPrices'>AR${price}</p>
-                <p className='ItemDimensions'>Height: {height} - Diameter: {diameter}{side}</p>
-                <button className="ItemCountAddItems">See more</button>
+                <p className='ItemDimensions'>Dimensions: {dimensions}</p>
+                <Link to= {`/item/${id}`} className="ItemCountAddItems"> See more </Link>
             </div>
         </div>
     )
