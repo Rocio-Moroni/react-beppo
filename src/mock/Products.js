@@ -11,7 +11,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 5,
@@ -67,7 +67,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,g_face,h_854,w_640,x_0/v1645142275/BEPPO/32915736_998208843671587_8601271789537984512_n_vnr4z8.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645142276/BEPPO/65666850_1066932887029425_7995779727983744930_n_y9zz9r.jpg',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 7,
@@ -95,7 +95,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 8,
@@ -109,7 +109,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 9,
@@ -123,7 +123,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 10,
@@ -137,7 +137,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 11,
@@ -151,7 +151,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 12,
@@ -165,7 +165,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 13,
@@ -179,7 +179,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 14,
@@ -193,7 +193,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 15,
@@ -207,7 +207,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 16,
@@ -221,7 +221,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 17,
@@ -235,7 +235,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 18,
@@ -249,7 +249,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 19,
@@ -263,7 +263,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 20,
@@ -277,7 +277,7 @@ export const products = [
         img2: '',
         img3: '',
         info: 'Diameter can have variations of up to 2cm',
-        category: 'Side Tables',
+        category: 'sideTables',
     },
     {
         id: 21,
@@ -291,7 +291,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,g_south,h_854,w_640/v1645417382/BEPPO/20062019-img_13771-a10d5069669dee04e415623243656648-640-0_nujru8.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1645417364/BEPPO/20062019-img_13711-55edb5665cfcdd8a5415623243640007-640-0_m0musy.jpg',
         info: '100% Leather! Handmade',
-        category: 'Leather',
+        category: 'leather',
     },
     {
         id: 22,
@@ -305,7 +305,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1645418282/BEPPO/20062019-img_15841-4f06abf13ba8a6ffdb15623245165928-640-0_ackjor.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1645418282/BEPPO/20062019-img_14461-60074f772b389be7e715623245155913-640-0_ueato2.jpg',
         info: '100% Leather! Handmade',
-        category: 'Leather',
+        category: 'leather',
     },
     {
         id: 23,
@@ -319,7 +319,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645419169/BEPPO/20062019-img_13861-23d04c87b3e8cb05cd15624209112356-320-0_qtv6q7.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645419170/BEPPO/20062019-img_13951-d785c6ef3fae8daa0e15625096271006-640-0_i5v2kd.jpg',
         info: '100% Leather! Handmade',
-        category: 'Leather',
+        category: 'leather',
     },
     {
         id: 24,
@@ -333,7 +333,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645419161/BEPPO/20062019-img_15951-ffc57c978aaa50bdfc15625096270914-640-0_v0w0fz.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,g_west,h_854,w_640,y_0/v1645419102/BEPPO/64453385_2201988540061854_5093660879224547261_n_ntnn6c.jpg',
         info: '100% Leather! Handmade',
-        category: 'Leather',
+        category: 'leather',
     },
     {
         id: 25,
@@ -347,7 +347,7 @@ export const products = [
         img2: '',
         img3: '',
         info: '1 set of 2 pieces',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 26,
@@ -361,7 +361,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645420110/BEPPO/274001607_262387759372908_4796795099305709799_n_drdiob.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645420110/BEPPO/11122021-img_98581-90c8a2a53f2256cae316401245449289-640-0_h4xtof.jpg',
         info: '1 set of 3 pieces',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 27,
@@ -375,7 +375,7 @@ export const products = [
         img2: '',
         img3: '',
         info: '1 set of 2 pieces',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 28,
@@ -389,7 +389,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645420110/BEPPO/274001607_262387759372908_4796795099305709799_n_drdiob.jpg',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645420109/BEPPO/66668504_1009124022753139_4357074910611383137_n_dkrfgk.jpg',
         info: '1 set of 3 pieces',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 29,
@@ -403,7 +403,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/v1645420857/BEPPO/palos-de-amasar-21-722129466bb0e98cec16429840637143-640-0_ssecpg.jpg',
         img3: '',
         info: '',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 30,
@@ -417,7 +417,7 @@ export const products = [
         img2: '',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645421148/BEPPO/img_05701-3248605125d22728c915438401544187-640-0_lljelg.jpg',
         info: '',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 31,
@@ -431,7 +431,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645420956/BEPPO/img_05721-cd57a864a4fe38c8ba15438402393412-640-0_bqsoi5.jpg',
         img3: '',
         info: '',
-        category: 'Home Deco',
+        category: 'homeDeco',
     },
     {
         id: 32,
@@ -445,7 +445,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645423927/BEPPO/img_46401-d0cd095b45e724ae4416051336550064-640-0-2_t0csxs.jpg',
         img3: '',
         info: 'Solid wood table with top for countertop',
-        category: 'Cutting Boards',
+        category: 'cuttingBoards',
     },
     {
         id: 33,
@@ -459,7 +459,7 @@ export const products = [
         img2: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_640/v1645424126/BEPPO/img_46501-0dd51e489c5e49023d16051340752225-320-0_otq1c4.jpg',
         img3: '',
         info: 'Solid wood table',
-        category: 'Cutting Boards',
+        category: 'cuttingBoards',
     },
     {
         id: 34,
@@ -473,7 +473,7 @@ export const products = [
         img2: '',
         img3: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1645424126/BEPPO/bc2dac25-c9bd-4474-8f31-87ce9bae513a_osr9qb.jpg',
         info: 'Solid wood table',
-        category: 'Cutting Boards',
+        category: 'cuttingBoards',
     },
 ]
 

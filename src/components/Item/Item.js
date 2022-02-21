@@ -20,8 +20,8 @@ const Item = ({id, itemName, stock, price, dimensions, img}) => {
                 <h6>{itemName}</h6>
                 <img className='ItemImg' src={img}/>
                 <p className='ItemPrices'>AR${price}</p>
-                <p className='ItemDimensions'>Dimensions: {dimensions}</p>
-                <Link to= {`/item/${id}`} className="ItemCountAddItems"> See more </Link>
+                <p className='ItemDimensions'>Dimensions: {dimensions}</p> <br/>
+                <Link to= {`/item/${id}`} className="ItemSeeMore"> See more </Link>
             </div>
         </div>
     )
