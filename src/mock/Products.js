@@ -244,7 +244,7 @@ export const products = [
         price: 50300,
         dimensions: '39cm x ⌀36cm',
         woodType: ['Carne de vaca', 'Cedro', 'Guatambu', 'Guayubira', 'Laurel', 'Loro negro', 'Oveña', 'Zoita'],
-        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_crop,h_854,w_640/v1644793018/BEPPO/40192143_285538675368041_4490551856027664384_n_racank.jpg',
+        img: 'https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,h_854,w_640/v1644937273/BEPPO/103549893_583378222319273_1164228564251237408_n_xyirny.jpg',
         img1: '',
         img2: '',
         img3: '',
