@@ -479,7 +479,7 @@ export const products = [
 
 // Categories
 const categories = [
-    {id: 'home', description: 'Home'},
+    // {id: 'home', description: 'Home'},
     {id: 'sideTables', description: 'Side Tables'},
     {id: 'leather', description: 'Leather'},
     {id: 'homeDeco', description: 'Home Deco'},

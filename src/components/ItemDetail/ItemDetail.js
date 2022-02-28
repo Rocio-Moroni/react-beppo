@@ -7,7 +7,7 @@ import SeparationLine from '../SeparationLine/SeparationLine';
 import ItemCount from '../ItemCount/ItemCount';
 import Dropdown from '../Dropdown/Dropdown';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 
 /* COMPONENTS */
@@ -15,12 +15,16 @@ import { useState } from 'react';
 // Item component
 const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
 
+    const [count, setCount] = useState(0);
+
     // OnAdd function
     const onAdd = (count) => {
-        if (count > 1) {
-        console.log(`Se agregaron ${count} artículos a tu carrito de compra`);
+        if (count > 0) {
+            console.log(`Se agregaron ${count} artículos a tu carrito de compra`)
+            setCount(count);
         } else {
             console.log(`Se agregó ${count} artículo a tu carrito de compra`);
+            setCount(count);
         }
     };
 
@@ -38,6 +42,7 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
                     <img className='ItemImgCaroussel' src={img3}/>
                 </div>
             </picture>
+
             <section className='ItemDetailDescription'>
                 <h4>{itemName}</h4>
                 <p className='ItemPrice'>AR${price}</p>
@@ -51,9 +56,16 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
                 <div>
                     <Dropdown selected={selected} setSelected={setSelected} />
                 </div>
-                <div className='ItemCount'>
-                    <ItemCount stock={stock} initial={1} onAdd={onAdd} />
-                </div>
+
+                {
+                    count ? (
+                        <Link to="/cart">
+                            <button className='ViewCart'> View Shopping Cart </button>
+                        </Link>
+                    ):(
+                        <ItemCount className='ItemCount' stock={stock} initial={1} onAdd={onAdd} />
+                    )
+                }
             </section>
         </article>
     )

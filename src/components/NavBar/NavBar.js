@@ -9,7 +9,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import SeparationLine from '../SeparationLine/SeparationLine';
 import { getCategories } from '../../mock/Products';
 // React import
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
