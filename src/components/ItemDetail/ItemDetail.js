@@ -6,7 +6,9 @@ import './ItemDetail.css'
 import SeparationLine from '../SeparationLine/SeparationLine';
 import ItemCount from '../ItemCount/ItemCount';
 import Dropdown from '../Dropdown/Dropdown';
-import { useState } from 'react';
+import { CartContext } from '../../context/CartContext';
+// React import
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -16,16 +18,24 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
 
     const [count, setCount] = useState(0);
+    const { addToCart } = useContext(CartContext);
 
+    // Product to add function
+    const productToAdd = {
+        itemName,
+        stock,
+        price,
+        dimensions,
+        img,
+        img1,
+        img2,
+        img3,
+        info
+    };
     // OnAdd function
     const onAdd = (count) => {
-        if (count > 0) {
-            console.log(`Se agregaron ${count} artículos a tu carrito de compra`)
-            setCount(count);
-        } else {
-            console.log(`Se agregó ${count} artículo a tu carrito de compra`);
-            setCount(count);
-        }
+        setCount(count);
+        addToCart({...productToAdd}, count)
     };
 
     // Selected hook
