@@ -48,13 +48,13 @@ export const CartProvider = ({ children }) => {
             );
         // If the added product is not in the shopping cart, we add it.
         } else {
-            setCartItems([...cartItems, {...product, quantity: 1}])
+            setCartItems([...cartItems, {...product, quantity}])
         }
     };
 
 
     // Function for removing products from the shopping cart.
-    const DeleteItemFromCart = (product, itemName, quantity) => {
+    const DeleteItemFromCart = (product) => {
 
         // Searching of the product by its itemName.
         const inCart = cartItems.find(
@@ -64,7 +64,7 @@ export const CartProvider = ({ children }) => {
         // If the amount of the product that we want to remove its equal to 1, we filter the cart and we delete it from it.
         if (inCart.quantity === 1) {
             setCartItems(
-                cartItems.filter((productInCart) => productInCart.itemName !== itemName)
+                cartItems.filter((productInCart) => productInCart.itemName !== product.itemName)
             );
         // If the amount of the product that we want to remove is bigger to 1, we map the shopping cart, and we rest 1 item from its total amount.
         } else {
