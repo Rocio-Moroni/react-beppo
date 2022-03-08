@@ -1,0 +1,171 @@
+.CartContainer {
+    display: flex;
+    height: 50px;
+    justify-content: flex-end;
+}
+
+.ButtonCartContainer {
+    display: flex;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.ProductsNumber {
+    display: flex;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 999px;
+    background-color: #fb3939;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    margin-top: -10px;
+    margin-left: -1.5px;
+}
+
+.Cart {
+    position: absolute;
+    margin-top: 25px;
+    margin-right: 20px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;    color: black;
+    z-index: 2;
+    background-color: white;
+}
+
+.CartTitle {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 35px;
+    font-size: 1.1em;
+}
+
+.EmptyCartContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.EmptyCart {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.SadFace {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.ClickStart {
+    font-size: 12px;
+
+}
+
+.CartTotal {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.productsContainer{
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-top: 5px;
+}
+
+/* Scrollbar: Cart*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+}
+
+.ButtonsDinamicCart {
+    display: flex;
+    justify-content: center;
+}
+
+.BtnDinamicCart {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #000;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 10px;
+    width: 40%;
+    height: 50px;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+
+.BtnDinamicCart span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+}
+
+.BtnDinamicCart span:last-child {
+    color: #000;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 40%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+}
+
+.BtnDinamicCart:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #a0a598;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+}
+
+.BtnDinamicCart:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+}
+
+.BtnDinamicCart:hover span:last-child {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+

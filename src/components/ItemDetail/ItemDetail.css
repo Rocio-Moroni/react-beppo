@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
+    margin-top: 5%;
 }
 
 .ItemImages {
@@ -86,6 +87,7 @@ h4 {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    z-index: 1;
 }
 
 .ViewCart:after {
@@ -98,6 +100,7 @@ h4 {
     top: 6px;
     left: 6px;
     transition: 0.2s;
+    z-index: -1;
 }
 
 .ViewCart:hover:after {

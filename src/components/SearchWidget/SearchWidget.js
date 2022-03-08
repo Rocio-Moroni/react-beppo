@@ -14,7 +14,7 @@ const SearchWidget = () => {
     return (
         <ul>
             <li className="IconSearch">
-                <IoIosSearch size="1.3em"/>
+                <IoIosSearch size="1.5em"/>
             </li>
         </ul>
     )

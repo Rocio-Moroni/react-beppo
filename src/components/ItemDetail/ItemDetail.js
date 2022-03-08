@@ -6,7 +6,7 @@ import './ItemDetail.css'
 import SeparationLine from '../SeparationLine/SeparationLine';
 import ItemCount from '../ItemCount/ItemCount';
 import Dropdown from '../Dropdown/Dropdown';
-import { CartContext } from '../../context/CartContext';
+import CartContext from '../../context/CartContext';
 // React import
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
 
     const [count, setCount] = useState(0);
-    const { addToCart } = useContext(CartContext);
+    const { AddItemToCart } = useContext(CartContext);
 
     // Product to add function
     const productToAdd = {
@@ -35,7 +35,7 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
     // OnAdd function
     const onAdd = (count) => {
         setCount(count);
-        addToCart({...productToAdd}, count)
+        AddItemToCart({...productToAdd}, count)
     };
 
     // Selected hook

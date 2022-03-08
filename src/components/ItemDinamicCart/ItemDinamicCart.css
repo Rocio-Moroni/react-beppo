@@ -1,0 +1,64 @@
+.ItemCartContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.CartItem {
+    display: flex;
+    justify-content: space-between;
+    height: 95px;
+    width: 85%;
+    margin-top: 5px;
+    align-items: center;
+    padding: 0 15px;
+    border: 0.2px solid grey;
+}
+
+.ImgCart {
+    height: 83px;
+    border-radius: 2px;
+}
+
+.CartInfo {
+  width: 170px;
+}
+
+.ItemName, .ItemQuantity {
+  font-size: 0.9em;
+}
+
+.ItemTotalPrice {
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.BtnAddRemove {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 1px;
+  box-sizing: border-box;
+  color: #111827;
+  font-size: 0.1em;
+  line-height: 0.3rem;
+  padding: 6px 14px;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.BtnAddRemove:hover {
+  background-color: rgb(249,250,251);
+}
+
+.BtnAddRemove:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.BtnAddRemove:focus-visible {
+  box-shadow: none;
+}

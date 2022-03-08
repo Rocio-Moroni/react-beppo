@@ -5,6 +5,8 @@
 .App {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
+  background-color: #fff;
+  z-index: -1;
 }
 
 .App-logo {

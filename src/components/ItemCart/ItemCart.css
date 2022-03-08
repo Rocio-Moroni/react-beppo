@@ -1,0 +1,134 @@
+.Container {
+    display: flex;
+    margin-left: 8.5%;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 20px;
+}
+.ImageContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ItemCImage {
+    height: 250px;
+    border-radius: 5px;
+}
+
+.CartCInfo {
+    display: flex;
+    width: 100%;
+
+}
+
+.CartInfoLeft {
+    width: 100%;
+}
+
+.ItemCName {
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+
+
+.ItemCTotalPrice {
+    font-size: 1.2em;
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.ItemCInformation {
+    font-size: 0.8em;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.AddRemoveButtons {
+    margin-top: 6%;
+}
+
+.ItemCQuantity {
+    font-size: 1.1em;
+}
+
+
+.custom-btn {
+    width: 150px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.BtnAdd {
+    background: #000;
+    color: #fff;
+    z-index: 1;
+}
+.BtnAdd:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: #a0a598;
+    transition: all 0.3s ease;
+}
+.BtnAdd:hover {
+    color: #000;
+}
+.BtnAdd:hover:after {
+    left: 0;
+    width: 100%;
+}
+.BtnAdd:active {
+    top: 2px;
+}
+
+.BtnRemove {
+    background: #000;
+    color: #fff;
+    z-index: 1;
+}
+.BtnRemove:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: #a0a598;
+    transition: all 0.3s ease;
+}
+.BtnRemove:hover {
+    color: #000;
+}
+.BtnRemove:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.BtnRemove:active {
+    top: 2px;
+}
+
+.Cross {
+    margin-right: 5px;
+    margin-top: 2px;
+    cursor: pointer;
+}

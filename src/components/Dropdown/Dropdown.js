@@ -9,7 +9,7 @@ import { useState } from 'react';
 /* COMPONENTS */
 
 // Dropdown component
-const Dropdown = ({selected, setSelected,}) => {
+const Dropdown = ({selected, setSelected}) => {
     const [isActive, setIsActive] = useState(false);
     const options = ['Carne de Vaca', 'Cedro', 'Guatambu', 'Guayubira', 'Laurel', 'Loro Negro', 'Oveña', 'Perciguero', 'Zoita'];
 

@@ -5,7 +5,7 @@ import './NavBar.css';
 // Components import
 import SearchWidget from '../SearchWidget/SearchWidget';
 import FavouriteWidget from '../FavouriteWidget/FavouriteWidget';
-import CartWidget from '../CartWidget/CartWidget';
+import DinamicCart from '../DinamicCart/DinamicCart'
 import SeparationLine from '../SeparationLine/SeparationLine';
 import { getCategories } from '../../mock/Products';
 // React import
@@ -34,7 +34,7 @@ const NavBar = () => {
 
                 <div className="NavBarIcons">
                     <FavouriteWidget />
-                    <CartWidget />
+                    <DinamicCart />
                 </div>
 
                 <div className="NavBarLogo">

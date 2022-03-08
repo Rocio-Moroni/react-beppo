@@ -14,8 +14,7 @@ const CartWidget = () => {
     return (
         <ul>
             <li className="IconCart">
-                <IoCartOutline size="1.3em"/>
-                <p>3</p>
+                <IoCartOutline size="1.5em"/>
             </li>
         </ul>
     )
