@@ -34,7 +34,7 @@ export const ItemCart = ({ item } ) => {
                     <p className='ItemCInformation'> {item.info} </p>
                     <div className='AddRemoveButtons'>
                         <div className='ItemCQuantity'>Quantity: {item.quantity}</div>
-                        <button className='BtnAdd custom-btn AddRemoveButtons' onClick={() => AddItemToCart(item)}> ADD </button>
+                        <button className='BtnAdd custom-btn AddRemoveButtons' onClick={() => AddItemToCart(itemName)}> ADD </button>
                         <button className='BtnRemove custom-btn AddRemoveButtons' onClick={() => DeleteItemFromCart(item.itemName)}> REMOVE </button>
                     </div>
                 </div>

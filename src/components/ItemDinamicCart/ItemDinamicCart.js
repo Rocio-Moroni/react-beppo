@@ -28,8 +28,8 @@ export const ItemDinamicCart = ({ item }) => {
                         <p className='ItemName'>{item.itemName}</p>
                         <div className='ItemQuantity'>{item.quantity}</div>
                         <div>
-                            <button className='BtnAddRemove' onClick={() => AddItemToCart(itemName)}> ADD </button>
-                            <button className='BtnAddRemove' onClick={() => DeleteItemFromCart(item)}> REMOVE </button>
+                            <button className='BtnAddRemove' onClick={() => AddItemToCart(item)}> ADD </button>
+                            <button className='BtnAddRemove' onClick={() => DeleteItemFromCart(item.itemName)}> REMOVE </button>
                         </div>
                     </div>
                     <div>
