@@ -69,9 +69,11 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
 
                 {
                     count ? (
-                        <Link to="/cart">
-                            <button className='ViewCart'> View Shopping Cart </button>
-                        </Link>
+                            <div className='multi-button'>
+                                <Link to="/"> <button> Continue Shopping </button> </Link>
+                                <Link to="/cart"> <button> View Shopping Cart </button> </Link>
+                                <Link to="/cart"> <button> Finish Shopping </button> </Link>
+                            </div>
                     ):(
                         <ItemCount className='ItemCount' stock={stock} initial={1} onAdd={onAdd} />
                     )
@@ -81,3 +83,5 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
     )
 };
 export default ItemDetail;
+
+

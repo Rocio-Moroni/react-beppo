@@ -33,38 +33,36 @@
 }
 
 /* Button .ItemCountAddItems */
+:root {
+    --duration: 250ms;
+    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --space: 1rem;
+}
+
 .ItemCountAddItems {
-    font-size: 0.8em;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
-    cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    z-index: 1;
-}
-
-.ItemCountAddItems:after {
-    content: "";
-    background-color: #a0a598;
+    display: flex;
     width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 6px;
-    left: 6px;
-    transition: 0.2s;
+    margin-top: 5%;
 }
 
-.ItemCountAddItems:hover:after {
-    top: 0px;
-    left: 0px;
+.ItemCountAddItems {
+    font-size: 0.85em;
+    font-weight: 250;
+    padding:
+        calc(var(--space) / 1.125)
+        var(--space)
+        var(--space);    outline: 0;
+    border: 0.5px solid grey;
+    cursor: pointer;
+    background-color: white;
+    text-transform: uppercase;
 }
+
+.ItemCountAddItems:hover {
+        color: white;
+        outline: none;
+        background-color: black;
+    }
 
 @media (min-width: 768px) {
     .ItemCountAddItems {

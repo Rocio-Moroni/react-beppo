@@ -73,43 +73,43 @@ h4 {
 }
 
 /* Button .ViewCart */
-.ViewCart {
+
+:root {
+    --duration: 250ms;
+    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --space: 1rem;
+}
+
+.multi-button {
+    display: flex;
+    width: 100%;
     margin-top: 5%;
-    font-size: 0.8em;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
+}
+
+.multi-button button {
+    flex-grow: 1;
     cursor: pointer;
     position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    z-index: 1;
+    padding:
+        calc(var(--space) / 1.125)
+        var(--space)
+        var(--space);
+    border: 0.5px solid grey;
+    color: black;
+    background-color: white;
+    font-size: 0.85em;
+    font-weight: 250;
+    text-transform: uppercase;
 }
 
-.ViewCart:after {
-    content: "";
-    background-color: #a0a598;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 6px;
-    left: 6px;
-    transition: 0.2s;
-    z-index: -1;
+.multi-button button:hover,
+.multi-button button:focus {
+    color: white;
+    outline: none;
+    background-color: black;
 }
 
-.ViewCart:hover:after {
-    top: 0px;
-    left: 0px;
-}
-
-@media (min-width: 768px) {
-    .ViewCart {
-        padding: 13px 50px 13px;
-    }
+.multi-button:hover button:focus:not(:hover) {
+    color: black;
+    background-color: white;
 }

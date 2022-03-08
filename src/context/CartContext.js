@@ -54,7 +54,7 @@ export const CartProvider = ({ children }) => {
 
 
     // Function for removing products from the shopping cart.
-    const DeleteItemFromCart = (product) => {
+    const DeleteItemFromCart = (product, quantity) => {
 
         // Searching of the product by its itemName.
         const inCart = cartItems.find(
