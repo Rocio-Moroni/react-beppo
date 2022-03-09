@@ -45,7 +45,7 @@ const DinamicCart = () => {
                 <div className='ButtonCart'>
                     {!cartOpen ? (
                         <div>
-                            <CartWidget/>
+                            {productsLength > 0 && <CartWidget/>}
                         </div>
                     ) : (
                         <div>
@@ -53,9 +53,11 @@ const DinamicCart = () => {
                         </div>
                     )}
                 </div>
-                {!cartOpen && (
-                    <div className='ProductsNumber'>{productsLength}</div>
-                )}
+                <div>
+                    {productsLength > 0 && !cartOpen && (
+                        <div className='ProductsNumber'>{productsLength}</div>
+                    )}
+                </div>
             </div>
             {cartItems && cartOpen && (
                 <div className='Cart'>
@@ -74,6 +76,7 @@ const DinamicCart = () => {
                             ))}
                         </div>
                     )}
+
                     <SeparationLine />
                     <h2 className='CartTotal'> TOTAL: AR${total} </h2>
                     <div className='ButtonsDinamicCart'>
