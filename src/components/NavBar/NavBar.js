@@ -12,6 +12,9 @@ import { getCategories } from '../../mock/Products';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+// Firebase import
+import { getDocs, collection } from 'firebase/firestore';
+import { firestoreDb } from '../../services/firebase/Firebase';
 
 
 /* COMPONENTS */
@@ -21,8 +24,11 @@ const NavBar = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        getCategories().then(categories => {
-            setCategories(categories)
+        getDocs(collection(firestoreDb, 'categories')).then(response => {
+            const categories = response.docs.map(cat => {
+                return { id: cat.id, ...cat.data()}
+        })
+        setCategories(categories)
         })
     }, []);
 
