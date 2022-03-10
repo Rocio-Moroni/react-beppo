@@ -11,6 +11,7 @@ import { getCategories } from '../../mock/Products';
 // React import
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 /* COMPONENTS */
@@ -37,9 +38,11 @@ const NavBar = () => {
                     <DinamicCart />
                 </div>
 
-                <div className="NavBarLogo">
-                    <h2>beppo</h2>
-                </div>
+                <Link to={`/`}>
+                    <div className="NavBarLogo">
+                        <h2>beppo</h2>
+                    </div>
+                </Link>
 
                 <div className="SeparationLine1">
                     <SeparationLine />

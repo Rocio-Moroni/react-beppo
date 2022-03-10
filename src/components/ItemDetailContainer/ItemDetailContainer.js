@@ -5,11 +5,12 @@ import './ItemDetailContainer.css';
 // Component import
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
-// Products import
-import { getSingleProduct } from '../../mock/Products';
 // React import
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+// Firebase import
+import { getDoc, doc } from 'firebase/firestore';
+import { firestoreDb } from '../../services/firebase/Firebase';
 
 
 /* COMPONENTS */
@@ -23,17 +24,21 @@ const ItemDetailContainer = () => {
 
     // useEffect Hook
     useEffect(() => {
-        getSingleProduct (productId)
-            .then((response) => {
-                setProduct(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }, [productId]);
+        setLoading(true);
+
+        const docRef = doc(firestoreDb, 'products', productId);
+
+        getDoc(docRef).then(response => {
+            const product = { id: response.id, ...response.data() }
+            setProduct(product);
+        }).finally(() => {
+            setLoading(false);
+        })
+
+        return (() => {
+            setProduct()
+        });
+    }, [productId]); // eslint-disable-line
 
     return (
         <>
