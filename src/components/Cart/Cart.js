@@ -11,6 +11,7 @@ import { useNotificationServices } from '../../services/notification/Notificatio
 import React, { useContext, useState, useEffect } from 'react';
 import { IoRemoveOutline } from 'react-icons/io5';
 import { products } from '../../mock/Products';
+import { useParams } from 'react-router-dom';
 // Firebase import
 import { writeBatch, getDoc, doc, addDoc, collection, Timestamp } from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase/Firebase';
@@ -29,6 +30,8 @@ const Cart = ({ item }) => {
 
     // Notification component.
     const setNotification = useNotificationServices();
+
+    const { productId } = useParams()
 
     // Everytime the shopping cart is modified, we update the amount of products.
     useEffect(() => {
@@ -61,7 +64,7 @@ const Cart = ({ item }) => {
 
         // Verification of all the stock products.
         objOrder.items.forEach(prod => {
-            getDoc(doc(firestoreDb, 'products', prod.itemName)).then(response => {
+            getDoc(doc(firestoreDb, 'products', prod.id)).then(response => {
                 if (response.data().stock >= prod.quantity) {
                     batch.update(doc(firestoreDb, 'products', response.id), {
                         stock: response.data().stock - prod.quantity

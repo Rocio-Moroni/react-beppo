@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 /* COMPONENTS */
 
 // Item component
-const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
+const ItemDetail = ({ product, id, itemName, stock, price, dimensions, img, img1, img2, img3, info}) => {
 
     const [count, setCount] = useState(0);
     const { AddItemToCart } = useContext(CartContext);
@@ -24,6 +24,7 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
 
     // Product to add function
     const productToAdd = {
+        id,
         itemName,
         stock,
         price,
