@@ -58,19 +58,19 @@ export const CartProvider = ({ children }) => {
 
         // Searching of the product by its itemName.
         const inCart = cartItems.find(
-            (productInCart) => productInCart.itemName === product.itemName
+            (productInCart) => productInCart.itemName === product
         );
 
         // If the amount of the product that we want to remove its equal to 1, we filter the cart and we delete it from it.
         if (inCart.quantity === 1) {
             setCartItems(
-                cartItems.filter((productInCart) => productInCart.itemName !== product.itemName)
+                cartItems.filter((productInCart) => productInCart.itemName !== product)
             );
         // If the amount of the product that we want to remove is bigger to 1, we map the shopping cart, and we rest 1 item from its total amount.
         } else {
             setCartItems(
                 cartItems.map((productInCart) => {
-                    if (productInCart.itemName === product.itemName) {
+                    if (productInCart.itemName === product) {
                         return {...inCart, quantity: inCart.quantity - 1};
                     // If none of the above conditions are met, return the shopping cart as it was.
                     } else return productInCart;
