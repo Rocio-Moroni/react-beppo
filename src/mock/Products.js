@@ -515,6 +515,3 @@ export const getCategories = () => {
         }, 1000);
     });
 };
-
-
-

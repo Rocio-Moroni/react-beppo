@@ -6,8 +6,14 @@ import './Cart.css'
 import CartContext from '../../context/CartContext';
 import { ItemCart } from "../ItemCart/ItemCart";
 import SeparationLine from '../SeparationLine/SeparationLine';
+import { useNotificationServices } from '../../services/notification/notificationServices.js';
 // React import
 import React, { useContext, useState, useEffect } from 'react';
+import { IoRemoveOutline } from 'react-icons/io5';
+import { products } from '../../mock/Products';
+// Firebase import
+import { writeBatch, getDoc, doc, addDoc, collection, Timestamp } from 'firebase/firestore';
+import { firestoreDb } from '../../services/firebase/Firebase';
 
 
 /* COMPONENTS*/
@@ -19,7 +25,10 @@ const Cart = ({ item }) => {
     const [productsLength, setProductsLength] = useState(0);
 
     // We bring from CartContext the products from the shopping cart.
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, ClearProducts, DeleteItemFromCart } = useContext(CartContext);
+
+    // Notification component.
+    const setNotification = useNotificationServices()
 
     // Everytime the shopping cart is modified, we update the amount of products.
     useEffect(() => {
@@ -32,6 +41,53 @@ const Cart = ({ item }) => {
     const total = cartItems.reduce(
         (previous, current) => previous + current.quantity * current.price, 0
     );
+
+
+    // Confirmation of order.
+    const confirmOrder = () => {
+        const objOrder = {
+            buyer: {
+                name: 'romo',
+                phone: '1212',
+                address: 'blabla'
+            },
+            items: cartItems,
+            total: total,
+            date: new Date()
+        }
+
+        const batch = writeBatch(firestoreDb);
+        const outOfStock = [];
+
+        // Verification of all the stock products.
+        objOrder.items.forEach(prod => {
+            getDoc(doc(firestoreDb, 'products', prod.itemName)).then(response => {
+                if (response.data().stock >= prod.quantity) {
+                    batch.update(doc(firestoreDb, 'products', response.id), {
+                        stock: response.data().stock - prod.quantity
+                    });
+                } else {
+                    outOfStock.push({ id: response.id, ...response.data()})
+                }
+            })
+        })
+
+        if(outOfStock.length === 0) {
+            addDoc(collection(firestoreDb, 'orders'), objOrder).then(({id}) => {
+                batch.commit().then(() => {
+                    ClearProducts();
+                    setNotification('success', `La orden se genero exitosamente, su numero de orden es: ${id}`)
+                })
+            }).catch(error => {
+                setNotification('error', error)
+            })
+        } else {
+            outOfStock.forEach(prod => {
+                setNotification('error', 'Debe completar los datos de contacto para generar la orden')
+            })
+        }
+
+    }
 
     return (
         <div className='CartCompleteContainer'>
@@ -82,87 +138,50 @@ const Cart = ({ item }) => {
                 </div>
                 <SeparationLine />
                 <div>
-                <ul>
-                    <li>
-                        <a className="facebook" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i className="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a className="twitter" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a className="instagram" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i className="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a className="google" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i className="fa fa-google-plus" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a className="facebook" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i className="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a className="twitter" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i className="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a className="instagram" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i className="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a className="google" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i className="fa fa-google-plus" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+                <button className='BtnDinamicCart' onClick={() => ClearProducts()}> DELETE ORDER </button>
+                <button onClick={() => confirmOrder()}> CONFIRM ORDER </button>
             </div>
         </div>
     )
 }
 
 export default Cart;
-
-<ul>
-    <li>
-        <a class="facebook" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-    </li>
-    <li>
-        <a class="twitter" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-    </li>
-    <li>
-        <a class="instagram" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-    </li>
-    <li>
-        <a class="google" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i class="fa fa-google-plus" aria-hidden="true"></i>
-        </a>
-    </li>
-</ul>

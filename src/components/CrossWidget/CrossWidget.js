@@ -1,7 +1,7 @@
 /* IMPORTS */
 
 // CSS import
-import './CrossWidget.css'
+import './CrossWidget.css';
 // Icons import
 import { IoClose } from "react-icons/io5";
 
