@@ -9,7 +9,7 @@ import Spinner from '../Spinner/Spinner';
 import { getAllProducts } from '../../mock/Products';
 // React import
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 // Firebase import
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase/Firebase';

@@ -7,7 +7,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 // React import
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 // Firebase import
 import { getDoc, doc } from 'firebase/firestore';
 import { firestoreDb } from '../../services/firebase/Firebase';
