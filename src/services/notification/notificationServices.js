@@ -1,27 +1,24 @@
 /* IMPORTS */
 
 // CSS import
-import './notificationServices.css';
+import './NotificationServices.css';
 // React import
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext } from 'react';
 
 /* COMPONENTS */
 
 // Notification component.
 const Notification = ({ message, severity }) => {
     const notificationStyles = {
-        position: 'absolute',
-        top: 100,
-        right: 5,
+        position: 'sticky',
+        top: '0.5px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 'auto',
+        width: '100%',
         height: 'auto',
-        // backgroundColor: severity === 'success' ? 'green' : 'red',
         padding: '10px 20px 10px 20px',
         color: 'white',
-        borderRadius: '10px'
     }
 
     const config = true ?
@@ -30,7 +27,8 @@ const Notification = ({ message, severity }) => {
         className: severity === 'success' ? 'Success' : 'Error'
     } : {}
 
-    if(message === '') {
+    // If this condition is accomplished, never return the message.
+    if (message === '') {
         return null
     }
 
@@ -41,18 +39,21 @@ const Notification = ({ message, severity }) => {
     )
 }
 
+
+// Notification context.
 const NotificationContext = createContext()
 
 export const NotificationServicesProvider = ({children}) => {
-    const [message, setMessage] = useState('')
-    const [severity, setSeverity] = useState('')
+    const [message, setMessage] = useState('');
+    const [severity, setSeverity] = useState('');
 
+    // Function that uses both: severity and message.
     const setNotification = (severity, message) => {
-        setMessage(message)
-        setSeverity(severity)
+        setMessage(message);
+        setSeverity(severity);
         setTimeout(() => {
             setMessage('')
-        }, 5000)
+        }, 5000);
     }
 
     return (

@@ -6,7 +6,7 @@ import './Cart.css'
 import CartContext from '../../context/CartContext';
 import { ItemCart } from "../ItemCart/ItemCart";
 import SeparationLine from '../SeparationLine/SeparationLine';
-import { useNotificationServices } from '../../services/notification/notificationServices.js';
+import { useNotificationServices } from '../../services/notification/NotificationServices.js';
 // React import
 import React, { useContext, useState, useEffect } from 'react';
 import { IoRemoveOutline } from 'react-icons/io5';
@@ -21,14 +21,14 @@ import { firestoreDb } from '../../services/firebase/Firebase';
 // Cart component
 const Cart = ({ item }) => {
 
-    // Creation of state for obtaining the amount of products we've got in our cart.
+    // Creation of a state for obtaining the amount of products we've got in our cart.
     const [productsLength, setProductsLength] = useState(0);
 
     // We bring from CartContext the products from the shopping cart.
     const { cartItems, ClearProducts, DeleteItemFromCart } = useContext(CartContext);
 
     // Notification component.
-    const setNotification = useNotificationServices()
+    const setNotification = useNotificationServices();
 
     // Everytime the shopping cart is modified, we update the amount of products.
     useEffect(() => {
@@ -76,14 +76,14 @@ const Cart = ({ item }) => {
             addDoc(collection(firestoreDb, 'orders'), objOrder).then(({id}) => {
                 batch.commit().then(() => {
                     ClearProducts();
-                    setNotification('success', `La orden se genero exitosamente, su numero de orden es: ${id}`)
+                    setNotification('success', `Your order was successfully generated! Order N# ${id}`)
                 })
             }).catch(error => {
                 setNotification('error', error)
             })
         } else {
             outOfStock.forEach(prod => {
-                setNotification('error', 'Debe completar los datos de contacto para generar la orden')
+                setNotification('error', 'You must complete the contact information to generate the order')
             })
         }
 
@@ -177,8 +177,8 @@ const Cart = ({ item }) => {
                         </li>
                     </ul>
                 </div>
-                <button className='BtnDinamicCart' onClick={() => ClearProducts()}> DELETE ORDER </button>
-                <button onClick={() => confirmOrder()}> CONFIRM ORDER </button>
+                <button className='BtnDelete custom-btn' onClick={() => ClearProducts()}> DELETE ORDER </button>
+                <button className='BtnConfirm custom-btn' onClick={() => confirmOrder()}> CONFIRM ORDER </button>
             </div>
         </div>
     )

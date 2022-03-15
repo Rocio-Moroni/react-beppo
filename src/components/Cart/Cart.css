@@ -31,3 +31,60 @@
     margin-bottom: 20px;
     height: 600px;
 }
+
+
+.BtnDelete {
+    background: white;
+    color: black;
+    z-index: 1;
+}
+.BtnDelete:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: black;
+    transition: all 0.3s ease;
+}
+.BtnDelete:hover {
+    color: white;
+}
+.BtnDelete:hover:after {
+    left: 0;
+    width: 100%;
+}
+.BtnDelete:active {
+    top: 2px;
+}
+
+.BtnConfirm {
+    background: white;
+    color: black;
+    z-index: 1;
+}
+.BtnConfirm:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: black;
+    transition: all 0.3s ease;
+}
+.BtnConfirm:hover {
+    color: white;
+}
+.BtnConfirm:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.BtnConfirm:active {
+    top: 2px;
+}

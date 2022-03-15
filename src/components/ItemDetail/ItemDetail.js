@@ -7,6 +7,7 @@ import SeparationLine from '../SeparationLine/SeparationLine';
 import ItemCount from '../ItemCount/ItemCount';
 import Dropdown from '../Dropdown/Dropdown';
 import CartContext from '../../context/CartContext';
+import { useNotificationServices } from '../../services/notification/NotificationServices';
 // React import
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -19,6 +20,7 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
 
     const [count, setCount] = useState(0);
     const { AddItemToCart } = useContext(CartContext);
+    const setNotification = useNotificationServices();
 
     // Product to add function
     const productToAdd = {
@@ -35,7 +37,8 @@ const ItemDetail = ({ product, itemName, stock, price, dimensions, img, img1, im
     // OnAdd function
     const onAdd = (count) => {
         setCount(count);
-        AddItemToCart({...productToAdd}, count)
+        AddItemToCart({...productToAdd}, count);
+        setNotification('success', `${itemName} was successfully added to your Shopping Cart!`);
     };
 
     // Selected hook
