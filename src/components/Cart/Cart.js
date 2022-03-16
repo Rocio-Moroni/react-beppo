@@ -181,7 +181,7 @@ const Cart = ({ item }) => {
                     </ul>
                 </div>
                 <button className='BtnDelete custom-btn' onClick={() => ClearProducts()}> DELETE ORDER </button>
-                <button className='BtnConfirm custom-btn' onClick={() => confirmOrder()}> CONFIRM ORDER </button>
+                <button className='BtnConfirm custom-btn' onClick={() => confirmOrder()} disabled={!productsLength} > CONFIRM ORDER </button>
             </div>
         </div>
     )
