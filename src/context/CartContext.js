@@ -11,7 +11,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     // Creation of a state for our shopping cart.
-    const [cartItems, setCartItems] = useState(() => {;
+    const [cartItems, setCartItems] = useState(() => {
 
         try {
             // Local Storage verification: If there are products in the LS, we parsed them and if there is nothing, we return an empty array.
@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
             setCartItems(
                 cartItems.map((productInCart) => {
                     if (productInCart.itemName === product.itemName) {
-                        return {...inCart, quantity: inCart.quantity + 1}
+                        return {...inCart, quantity: inCart.quantity + quantity}
                     } else return productInCart;
                 })
             );
@@ -89,6 +89,7 @@ export const CartProvider = ({ children }) => {
     const filteredProducts = cartItems.filter((product) => product.itemName !== itemName);
         setCartItems(filteredProducts);
     };
+
 
     return (
         <CartContext.Provider value={{ cartItems, AddItemToCart, DeleteItemFromCart, ClearProducts, RemoveProducts }}>

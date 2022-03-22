@@ -66,8 +66,8 @@ const DinamicCart = () => {
 
                     {cartItems.length === 0 ? (
                         <div className='EmptyCartContainer'>
-                            <p className='EmptyCart'> Your shopping cart is empty <span className='SadFace'><HiOutlineEmojiSad size="1.2em" /></span> </p>
-                            <Link to= {`/`} className='ClickStart'>CLICK HERE TO START</Link>
+                            <p className='EmptyCart'> YOUR SHOPPING CART IS EMPTY <span className='SadFace'><HiOutlineEmojiSad size="1.2em" /></span> </p>
+                            <Link to= {`/`} className='ClickStart'> <em> CLICK HERE TO START SHOPPING </em> </Link>
                         </div>
                     ) : (
                         <div className='productsContainer'>

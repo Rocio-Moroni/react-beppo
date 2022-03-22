@@ -5,6 +5,8 @@ import './ItemDetailContainer.css';
 // Component import
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
 // React import
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -41,7 +43,8 @@ const ItemDetailContainer = () => {
     }, [productId]); // eslint-disable-line
 
     return (
-        <>
+        <div className='ItemDetailContainer'>
+            <NavBar />
             {loading ? (
                 <>
                 <Spinner />
@@ -50,9 +53,10 @@ const ItemDetailContainer = () => {
                 <>
                     {/* <h1> {greeting} </h1> */}
                     <ItemDetail {...product} />
+                    <Footer />
                 </>
             )}
-        </>
+        </div>
     );
 };
 

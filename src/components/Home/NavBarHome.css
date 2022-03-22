@@ -1,0 +1,105 @@
+/* Home container */
+.NavBarHome {
+    height: 100vh;
+}
+
+.NavBarHomeContent {
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dfprmjlir/image/upload/v1647642030/BEPPO/11122021-IMG_0334_essbxt.jpg);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-size:cover;
+    background-position: 0% 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+
+.NavBarHomeIcons {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin-right: 2%;
+    color: white;
+    margin-top: 25px;
+}
+
+.NavBarHomeMenu {
+    color: white;
+    display: flex;
+    list-style: none;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.NavBarHomeMenu a {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 2px;
+    display: flex;
+    position: relative;
+}
+
+.NavBarHomeWidgets {
+    display: flex;
+}
+
+.NavBarH1{
+    margin-top: 10%;
+    line-height: 60px;
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 3;
+    margin-top: 5%;
+}
+.HomeTitle {
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+.Beppo {
+    font-size: 1.6em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* NavBar links hover */
+.NavBarHomeMenu a:after,
+.NavBarHomeMenu a:before {
+    content: "";
+    display: block;
+    border: 0px solid transparent;
+    width: 0%;
+    height: 0%;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+.NavBarHomeMenu a:after {
+    width: 0%;
+    height: 0%;
+    top: -10px;
+    left: -7px;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.NavBarHomeMenu a:before {
+    width: 0%;
+    height: 0%;
+    right: -7px;
+    bottom: 15px;
+    border-bottom: 1px solid transparent;
+border-right: 1px solid transparent;
+}
+.NavBarHomeMenu a:hover::before,
+.NavBarHomeMenu a:hover::after {
+    width: 10px;
+    height: 10px;
+    border-color: #fff;
+}

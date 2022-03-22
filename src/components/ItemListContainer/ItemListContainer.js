@@ -5,6 +5,8 @@ import './ItemListContainer.css';
 // Component import
 import ItemList from '../ItemList/ItemList';
 import Spinner from '../Spinner/Spinner';
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
 // Products import
 import { getAllProducts } from '../../mock/Products';
 // React import
@@ -51,7 +53,8 @@ const ItemListContainer = () => {
     },[categoryId]); // eslint-disable-line
 
     return (
-        <>
+        <div className='ItemListContainer'>
+            <NavBar />
             {loading ? (
                 <>
                     <Spinner />
@@ -59,9 +62,10 @@ const ItemListContainer = () => {
             ) : (
                 <>
                     <ItemList products={products} />
+                    <Footer />
                 </>
             )}
-        </>
+        </div>
     );
 };
 

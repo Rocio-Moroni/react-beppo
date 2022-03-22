@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const Item = ({id, itemName, stock, price, dimensions, img}) => {
 
     // Stock function
-
+    
 
     return (
         <div className='Item'>

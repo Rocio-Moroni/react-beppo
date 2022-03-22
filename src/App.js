@@ -9,6 +9,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
 import { NotificationServicesProvider } from './services/notification/NotificationServices';
+import SocialMediaWidget from './components/SocialMediaWidget/SocialMediaWidget';
+import Home from './components/Home/Home';
 // React import
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,13 +24,13 @@ const App = () => {
       <NotificationServicesProvider>
         <CartProvider>
           <BrowserRouter>
-            <NavBar />
-              <Routes>
-                <Route path='/' element={<ItemListContainer />}/>
-                <Route path='/category/:categoryId' element={<ItemListContainer />}/>
-                <Route path='/item/:productId' element={<ItemDetailContainer />}/>
-                <Route path='/:cart' element={<Cart />}/>
-              </Routes>
+                <Routes>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/category/:categoryId' element={<ItemListContainer />} />
+                  <Route path='/item/:productId' element={<ItemDetailContainer />} />
+                  <Route path='/:cart' element={<Cart />} />
+                </Routes>
+              <SocialMediaWidget />
           </BrowserRouter>
         </CartProvider>
       </NotificationServicesProvider>

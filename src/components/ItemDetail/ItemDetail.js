@@ -62,7 +62,7 @@ const ItemDetail = ({ product, id, itemName, stock, price, dimensions, img, img1
                 <p className='ItemPrice'>AR${price}</p>
                 <p className='ItemDescription'> We design and make monopieces of turned wood, each one of them is <strong> Unique! </strong>.<br/>
                 <br/> Our "{itemName}" has the following dimensions: {dimensions}.
-                <br/> {info}.
+                <br/><br/> {info}.
                 </p>
                 <div className='SeparationLine'>
                     <SeparationLine />

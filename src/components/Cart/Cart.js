@@ -7,6 +7,7 @@ import CartContext from '../../context/CartContext';
 import { ItemCart } from "../ItemCart/ItemCart";
 import SeparationLine from '../SeparationLine/SeparationLine';
 import { useNotificationServices } from '../../services/notification/NotificationServices.js';
+import NavBar from '../NavBar/NavBar';
 // React import
 import React, { useContext, useState, useEffect } from 'react';
 import { IoRemoveOutline } from 'react-icons/io5';
@@ -26,7 +27,7 @@ const Cart = ({ item }) => {
     const [productsLength, setProductsLength] = useState(0);
 
     // We bring from CartContext the products from the shopping cart.
-    const { cartItems, ClearProducts, DeleteItemFromCart } = useContext(CartContext);
+    const { cartItems, ClearProducts } = useContext(CartContext);
 
     // Notification component.
     const setNotification = useNotificationServices();
@@ -93,7 +94,10 @@ const Cart = ({ item }) => {
     }
 
     return (
+        <section className='NavBar'>
+            <NavBar />
         <div className='CartCompleteContainer'>
+
             <div className='ItemsReview'>
                 <div className='Intro'>
                     <h3 className='Title'> REVIEW ORDER </h3>
@@ -107,18 +111,18 @@ const Cart = ({ item }) => {
             </div>
 
             <div className='PaymentResume'>
-                <h4 className='PaymentTitel'> PURCHASE SUMMARY </h4>
-                <div>
+                <h4 className='PaymentTitle'> PURCHASE SUMMARY </h4>
+                <div className='Resume'>
                     <p> {productsLength} PRODUCTS </p>
                     <p> AR${total} </p>
                 </div>
-                <div>
+                <div className='Resume'>
                     <p> DELIVERY </p>
                     <p> FREE! </p>
                 </div>
-                <div>
-                    <p> TOTAL </p>
-                    <p> AR${total} </p>
+                <div className='Resume'>
+                    <p><strong> TOTAL </strong></p>
+                    <p><strong> AR${total} </strong></p>
                 </div>
                 <SeparationLine />
                 <p> PAYMENT METHODS </p>
@@ -140,50 +144,11 @@ const Cart = ({ item }) => {
                     </ul>
                 </div>
                 <SeparationLine />
-                <div>
-                    <ul>
-                        <li>
-                            <a className="facebook" href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <i className="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a className="twitter" href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <i className="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a className="instagram" href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <i className="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a className="google" href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <i className="fa fa-google-plus" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
                 <button className='BtnDelete custom-btn' onClick={() => ClearProducts()}> DELETE ORDER </button>
                 <button className='BtnConfirm custom-btn' onClick={() => confirmOrder()} disabled={!productsLength} > CONFIRM ORDER </button>
             </div>
         </div>
+        </section>
     )
 }
 

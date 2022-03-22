@@ -2,7 +2,7 @@
     margin-bottom: 5%;
     display: flex;
     justify-content: space-between;
-
+    background-color: #fff;
 }
 
 .Intro {
@@ -17,19 +17,31 @@
 .ItemsReview {
     width: 50%;
     margin-left: 4.5%;
-    margin-top: 2%;
 }
 
 .Title {
     font-size: 2em;
+    font-weight: 350;
 }
 .PaymentResume {
-    margin-top: 11%;
+    margin-top: 9%;
     margin-right: 9%;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;    border-radius: 5px;
     width: 25%;
     margin-bottom: 20px;
     height: 600px;
+}
+
+.PaymentTitle {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: 350;
+}
+.Resume {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 20px 2px 20px;
+    font-size: 0.9em;
 }
 
 
@@ -88,3 +100,4 @@
 .BtnConfirm:active {
     top: 2px;
 }
+
