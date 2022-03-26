@@ -33,7 +33,7 @@ The company is in a constant development of new products, which was taken into c
 <div style='align:center'>
 
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png" />
-<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png" style='color:white'/>
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png" />
@@ -52,10 +52,10 @@ The company is in a constant development of new products, which was taken into c
 
 ---
 
-### :video_game: Procedure to run the application locally.
+### Procedure to run the application locally.
 <div style="text-align: justify">
 
-1. We locate ourselves in the root folder `appbeppo`, open a new terminal and clone the repository with the following command:
+1. We locate ourselves on the root folder `appbeppo`, open a new terminal and clone the repository with the following command:
 `git clone https://github.com/Rocio-Moroni/react-beppo.git`
 2. Create a `.env` file at the root of the project and include the provided environment variables inside.
 3. From the terminal we locate ourselves in the root folder of the project and install all the dependencies with the command:
