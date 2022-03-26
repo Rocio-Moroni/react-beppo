@@ -42,6 +42,8 @@ The company is in a constant development of new products, which was taken into c
 
 ### Procedure to run the application locally.
 
+<div style="text-align: justify">
+
 1. We locate ourselves in the root folder `appbeppo`, open a new terminal and clone the repository with the following command:
 `git clone https://github.com/Rocio-Moroni/react-beppo.git`
 2. Create a `.env` file at the root of the project and include the provided environment variables inside.
@@ -49,6 +51,9 @@ The company is in a constant development of new products, which was taken into c
 `npm install`
 4. Finally, we run the app with the following command:
 `npm start`
+
+</div>
+
 
 ---
 
