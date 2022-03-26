@@ -6,14 +6,14 @@
 ### Table of Contents.
 
 - [DESCRIPTION](#description) <br />
-- [GIF](#GIF) <br />
+- [GIF](#gif) <br />
 - [HOW TO USE](#procedure) <br />
 - [DEPENDENCIES](#dependencies) <br />
 - [ROUTES](#routes) <br />
 
 ---
 
-### :pencil2: Descripition.
+### Descripition.
 <div style="text-align: justify">
 In this project I was able to develop the front end of an online store with a shopping cart, using components such as React and Firebase as a server in the cloud. A friendly user experience was created, with instant visual updates, and scalable code. <br />
 
@@ -30,7 +30,15 @@ The company is in a constant development of new products, which was taken into c
 <br />
 <br />
 
-<div style='display:flex justify-content:center'>
+<div style='text-align:center'>
+
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png" />
+
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png)
 
@@ -41,7 +49,7 @@ The company is in a constant development of new products, which was taken into c
 
 ---
 
-### :clapper: GIF
+### GIF
 
 ---
 
@@ -62,7 +70,7 @@ The company is in a constant development of new products, which was taken into c
 
 ---
 
-### :compass: Dependencies
+### Dependencies
 <div style="text-align: justify">
 
 - **[React Router (v6.2.1)](https://reactrouter.com/docs/en/v6)** It facilitates the navigability and grants a dynamic routing to the application.
@@ -78,5 +86,5 @@ The company is in a constant development of new products, which was taken into c
 
 ---
 
-### :magic_wand: Routes
+### Routes
 
