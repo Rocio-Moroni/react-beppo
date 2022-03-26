@@ -28,8 +28,11 @@ The company is in a constant development of new products, which was taken into c
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png)
 
+---
+
 ### GIF
 
+---
 
 ### Procedure to run the application locally.
 
@@ -41,6 +44,8 @@ The company is in a constant development of new products, which was taken into c
 4. Finally, we run the app with the following command:
 `npm start`
 
+---
+
 ### Dependencies
 - **[React Router (v6.2.1)](https://reactrouter.com/docs/en/v6)** It facilitates the navigability and grants a dynamic routing to the application.
 - **[React Icons](https://react-icons.github.io/react-icons/)** Allows you to include popular icons in your React projects easily, which utilizes ES6 imports that gives you the opportunity to only include the icons that your project is using.
@@ -50,6 +55,8 @@ The company is in a constant development of new products, which was taken into c
     - Hosting.
     - Monitoring.
     - Functions and more.
+
+---
 
 ### Routes
 
