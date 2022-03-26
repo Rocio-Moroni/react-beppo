@@ -1,12 +1,12 @@
 # Beppo | e-commerce | Coder Houses
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_1000/v1648317470/BEPPO/Captura_de_Pantalla_2022-03-26_a_la_s_14.50.51_v6wosv.png) <br />
-E-commerce store developed over the online ReactJS course dictated by Coder House.
+> E-commerce store developed over the online ReactJS course dictated by Coder House.
 
 ### Table of Contents.
 
 - [DESCRIPTION](#description) <br />
-- [GIF](#:clapper: GIF) <br />
+- [GIF](#GIF) <br />
 - [HOW TO USE](#procedure) <br />
 - [DEPENDENCIES](#dependencies) <br />
 - [ROUTES](#routes) <br />
@@ -15,7 +15,7 @@ E-commerce store developed over the online ReactJS course dictated by Coder Hous
 
 ### :pencil2: Descripition.
 <div style="text-align: justify">
-In this project I was able to develop the front end of an online store with a shopping cart, using components such as React and Firebase as a server in the cloud. A friendly user experience was created, with instant visual updates, and scalable code.
+In this project I was able to develop the front end of an online store with a shopping cart, using components such as React and Firebase as a server in the cloud. A friendly user experience was created, with instant visual updates, and scalable code. <br />
 
 The online store is for an Argentinian timber furniture company which produces beautiful decoration objetcs made from wood-turned monopieces. We can also find leather made elements such as notebook cases, 'materos', bags, among others.
 
@@ -30,7 +30,7 @@ The company is in a constant development of new products, which was taken into c
 <br />
 <br />
 
-<div>
+<div style='display:flex justify-content:center'>
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png)
 
