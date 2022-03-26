@@ -38,13 +38,10 @@ The company is in a constant development of new products, which was taken into c
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png" />
-<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338021/BEPPO/ICONS/css3_biapab.png" />
-
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338221/BEPPO/ICONS/css3-2_a6yzw9.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338308/BEPPO/ICONS/javascript_birp8o.png" />
 
 </div>
-
-![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png)
-
 
 <br />
 <br />
@@ -56,7 +53,6 @@ The company is in a constant development of new products, which was taken into c
 ---
 
 ### :video_game: Procedure to run the application locally.
-
 <div style="text-align: justify">
 
 1. We locate ourselves in the root folder `appbeppo`, open a new terminal and clone the repository with the following command:
