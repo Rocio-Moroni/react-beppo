@@ -1,4 +1,3 @@
-<p aling='center'>
 # Beppo | e-commerce | Coder House
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_1000/v1648317470/BEPPO/Captura_de_Pantalla_2022-03-26_a_la_s_14.50.51_v6wosv.png) <br />
@@ -11,10 +10,11 @@ E-commerce store developed over the online ReactJS course dictated by Coder Hous
 [:video_game: HOW TO USE](#use) <br />
 [:compass: DEPENDENCIES](#dependencies) <br />
 [:magic_wand: ROUTES](#routes) <br />
-</p>
+
 ---
 
 ### Descripition.
+<div style="text-align: justify">
 :wave: In this project I was able to develop the front end of an online store with a shopping cart, using components such as React and Firebase as a server in the cloud. A friendly user experience was created, with instant visual updates, and scalable code.
 
 The online store is for an Argentinian timber furniture company which produces beautiful decoration objetcs made from wood-turned monopieces. We can also find leather made elements such as notebook cases, 'materos', bags, among others. 
@@ -26,6 +26,7 @@ The store is organized in different sections:
 - Side Tables.
 
 The company is in a constant development of new products, which was taken into consideration during the design of the website to be able to make new adaptations in an efficient and simple way in the future.
+</div>
 <br />
 <br />
 
