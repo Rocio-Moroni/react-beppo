@@ -30,7 +30,7 @@ The company is in a constant development of new products, which was taken into c
 <br />
 <br />
 
-<div style='text-align:center'>
+<div style='align:center'>
 
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png" />
