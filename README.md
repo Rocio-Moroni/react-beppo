@@ -38,11 +38,12 @@ The company is in a constant development of new products, which was taken into c
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png" />
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338021/BEPPO/ICONS/css3_biapab.png" />
+
 
 </div>
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/react_ttll2b.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/git_pfbsff.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323615/BEPPO/ICONS/vscode_gxqfeg.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648324646/BEPPO/ICONS/npm-2_erk6mo.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png) ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/github_zzxca0.png)
-
 
 
 <br />
