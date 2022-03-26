@@ -6,7 +6,7 @@ E-commerce store developed over the online ReactJS course dictated by Coder Hous
 ### Table of Contents.
 
 - [DESCRIPTION](#description) <br />
-- [GIF](#gif) <br />
+- [GIF](#:clapper: GIF) <br />
 - [HOW TO USE](#procedure) <br />
 - [DEPENDENCIES](#dependencies) <br />
 - [ROUTES](#routes) <br />
