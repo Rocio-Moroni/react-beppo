@@ -1,3 +1,4 @@
+<p aling='center'>
 # Beppo | e-commerce | Coder House
 
 ![Project Image](https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_1000/v1648317470/BEPPO/Captura_de_Pantalla_2022-03-26_a_la_s_14.50.51_v6wosv.png) <br />
@@ -10,7 +11,7 @@ E-commerce store developed over the online ReactJS course dictated by Coder Hous
 [:video_game: HOW TO USE](#use) <br />
 [:compass: DEPENDENCIES](#dependencies) <br />
 [:magic_wand: ROUTES](#routes) <br />
-
+</p>
 ---
 
 ### Descripition.
