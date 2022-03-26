@@ -1,5 +1,5 @@
 .CartCompleteContainer {
-    margin-bottom: 5%;
+    padding-bottom: 5%;
     display: flex;
     justify-content: space-between;
     background-color: #fff;
@@ -26,10 +26,16 @@
 .PaymentResume {
     margin-top: 9%;
     margin-right: 9%;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;    
+    border-radius: 5px;
     width: 25%;
     margin-bottom: 20px;
-    height: 600px;
+    height: 470px;
+}
+
+.PaymentMethod {
+    display: flex;
+    justify-content: center;
 }
 
 .PaymentTitle {
@@ -44,60 +50,45 @@
     font-size: 0.9em;
 }
 
-
-.BtnDelete {
-    background: white;
-    color: black;
-    z-index: 1;
+.PaymentMethodImages {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    margin-top: 10px;
+    height: 200px;
 }
-.BtnDelete:after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background: black;
+.PaymentMethodImages img{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 40px;
+}
+.PaymentMethodImages li {
+    list-style: none;
+}
+
+
+.BtnDelete, .BtnConfirm {
+    width: 150px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
     transition: all 0.3s ease;
-}
-.BtnDelete:hover {
-    color: white;
-}
-.BtnDelete:hover:after {
-    left: 0;
-    width: 100%;
-}
-.BtnDelete:active {
-    top: 2px;
+    position: relative;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0.5px solid grey;
+    background-color: black;
+    color: whitesmoke;
 }
 
-.BtnConfirm {
-    background: white;
-    color: black;
-    z-index: 1;
-}
-.BtnConfirm:after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-    background: black;
-    transition: all 0.3s ease;
-}
-.BtnConfirm:hover {
-    color: white;
-}
-.BtnConfirm:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
-}
-.BtnConfirm:active {
-    top: 2px;
-}
 
+.FormOrder {
+    height: 100vh;
+}

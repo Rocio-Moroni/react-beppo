@@ -1,0 +1,182 @@
+.ContactForm {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 4%;
+}
+
+.ContactInformationTitle {
+    font-size: 1.1em;
+    text-align: left;
+    font-weight: 1000;
+}
+
+.ContactInformation {
+    width: 50%;
+    margin-left: 10%;
+}
+
+.PaymentInformation {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.PayForm {
+    display: flex;
+    width: 430px;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.FormRow {
+    display: flex;
+    height: 78px;
+    margin-top: 15px;
+}
+.Col {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.FormLabel {
+    display: flex;
+}
+.Space {
+    margin-left: 15px;
+}
+
+.TextArea {
+    border: 1px solid rgb(236, 236, 236);
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border-radius: 3px;
+    width: 300px;
+    outline: none;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+.Comments {
+    width: 615px;
+    height: 150px;
+}
+
+.Width {
+    width:430px;
+}
+
+.Pay {
+    display: flex;
+    width: 430px;
+}
+.Payments {
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+    margin-top: -15px;
+}
+
+.Date {
+    border: 1px solid rgb(236, 236, 236);
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+
+.CardName {
+    font-size: 14px;
+    margin-top: -5px;
+
+}
+.CardNumber, .CardExpirationDate, .CardCvv {
+    margin-top: -5px;
+}
+
+
+/* Error */
+.error {
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+/*  Selector de forma de pago.
+// Switcher. */
+.Switch[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    }
+.Col2 {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.SwitcherColor {
+    margin-top: 18px;
+    color: grey;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    width: 215px;
+    text-align: center;
+    border: solid 1px rgb(236, 236, 236);
+}
+
+    /* Seleccionado cambia de color */
+    .Switch[type=radio]:checked + .SwitcherColor {
+        color: black;
+        background: rgb(216, 216, 216);
+    }
+    /* Linea de separacion */
+    .SwitcherColor + .Switch[type=radio] + .SwitcherColor {
+    border-left: solid 1px rgb(236, 236, 236);
+    }
+
+
+/* Button */
+.FormButtonsPosition {
+    display: flex;
+}
+.FormButtons {
+    padding: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 3px;
+    width: 213px;
+    outline: none;
+    border: 1px solid white;
+    text-decoration: none;
+    color: whitesmoke;
+    margin-top: 47px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

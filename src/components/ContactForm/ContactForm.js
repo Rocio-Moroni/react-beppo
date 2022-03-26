@@ -164,7 +164,7 @@ const ContactForm = ({ toggleVisibility, setContact }) => {
                         </div>
                         <div className='FormButtons'>
                             <button> Delete Data </button>
-                            <button type='submit'> Confirm Payment </button>
+                            <button type='submit' onClick={handleContactForm}> Confirm Payment </button>
                         </div>
                     </form>
                 </div>

@@ -33,10 +33,9 @@ footer {
     display: flex;
     justify-content: center;
 }
-.Mail, .Location {
+.Mail, .Location, .Code {
     margin-right: 4px;
 }
-
 
 .NavBarFooter {
     display: flex;
@@ -51,4 +50,3 @@ footer {
     color: white;
     font-size: 1.2em;
 }
-

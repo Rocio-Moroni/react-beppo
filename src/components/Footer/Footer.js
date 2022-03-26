@@ -3,8 +3,9 @@
 // CSS import
 import './Footer.css';
 // Icons import
-import { IoMailOutline } from "react-icons/io5";
-import { HiOutlineLocationMarker } from "react-icons/hi";
+import { IoMailOutline } from 'react-icons/io5';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { VscCode } from 'react-icons/vsc';
 // React import
 import { Link } from 'react-router-dom';
 
@@ -23,9 +24,10 @@ const Footer = () => {
                 </div>
 
                 <div className='InfoFooter'>
-                    <p> <span className='Mail'><IoMailOutline size="1.2em" /></span> beppohome@gmail.com </p>
-                    <p> <span className='Location'><HiOutlineLocationMarker size="1.2em" /></span> Av. Malvinas Argentinas km 6.5, Córdoba, Argentina. </p>
-                    <p> &copy; beppo 2022 - All registered</p>
+                    <p> <span className='Mail'><IoMailOutline size='1.2em' /></span> beppohome@gmail.com </p>
+                    <p> <span className='Location'><HiOutlineLocationMarker size='1.2em' /></span> Av. Malvinas Argentinas km 6.5, Córdoba, Argentina. </p>
+                    <p> <span className='Code'><VscCode size='1.2em'/></span> Web Developer: Rocío Moroni. </p>
+                    <p> &copy; beppohome 2022 - All registered </p>
                 </div>
 
                 <div className='NavBarFooter'>
