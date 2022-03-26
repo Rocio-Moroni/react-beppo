@@ -58,6 +58,8 @@ The company is in a constant development of new products, which was taken into c
 ---
 
 ### Dependencies
+<div style="text-align: justify">
+
 - **[React Router (v6.2.1)](https://reactrouter.com/docs/en/v6)** It facilitates the navigability and grants a dynamic routing to the application.
 - **[React Icons](https://react-icons.github.io/react-icons/)** Allows you to include popular icons in your React projects easily, which utilizes ES6 imports that gives you the opportunity to only include the icons that your project is using.
 - **[Firebase (v9.6.7)](https://firebase.google.com)** It is a service provided by Google to meet the different needs that an application and its development cycle may have, within which we find:
@@ -67,6 +69,7 @@ The company is in a constant development of new products, which was taken into c
     - Monitoring.
     - Functions and more.
 
+<div>
 ---
 
 ### Routes
