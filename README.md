@@ -93,6 +93,6 @@ The company is in a constant development of new products, which was taken into c
 In a second viewport you can see a section with the products categories: 'Cutting Boards', 'Home Deco', 'Leather' and 'Side Tables', when clicking on each one of them leads to a new router. Then, a short description of Beppo is developed in the About Us section. Finally, a Coming Soon section is shown where we can see some images of the next products that will be for sale. Last but not least, we've got the footer of our e-commerce.
 - **CATEGORY (/category/:categoryId)** Renders filtered products based on their category.
 - **ITEM (/item/:productId)** Renders a card with the details of the selected product (Name, Price, Description, Images). Followed by a Dropdown in which the user can select the type of material he wants for his product. It also has a button available that is responsible for adding a certain amount of products to the shopping cart, once the product is added, another button is rendered that gives three different options to the user: redirects him to the home page, to the shopping cart review or directly to the form section for making the payment.
-
+- **CART (/:cart)** Renders the shopping cart with the products added by the user. A resume is shown at the right of the screen where a final price is shown, when the user clicks the button 'Confirm Order' a contact form is shown up to generate an order in the database, when submitting the form, if all the fields are correct, it renders a poster with the ID of the generated order.
 
 </div>
