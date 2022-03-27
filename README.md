@@ -86,6 +86,5 @@ The company is in a constant development of new products, which was taken into c
 ---
 
 ### Routes
-
-
-[:top:](#beppo)
+- **MAIN (/)** Renders the main page of the web, in which a header with a background image is displayed along with a category navbar.
+In a second viewport you can see a section with the products categories: 'Cutting Boards', 'Home Deco', 'Leather' and 'Side Tables', when clicking on each one of them leads to a new router. Then, a short description of Beppo is developed in the About Us section. Finally, a Coming Soon section is shown where we can see some images of the next products that will be for sale. Last but not least, we've got the footer of our e-commerce.

@@ -63,7 +63,7 @@ const Home = () => {
 
             {/* News Section */}
             <section className='News'>
-                <h2 className='InstagramTitle'> COMMING SOON </h2>
+                <h2 className='InstagramTitle'> COMING SOON </h2>
                 <hr className='Line2'></hr>
                 <div className='NewsImages'>
                     <div className='InstImg'>
