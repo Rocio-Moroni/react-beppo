@@ -83,7 +83,7 @@ const Cart = ({ item }) => {
             addDoc(collection(firestoreDb, 'orders'), objOrder).then(({id}) => {
                 batch.commit().then(() => {
                     ClearProducts();
-                    setNotification('success', `Your order was successfully generated! Order N# ${id}`)
+                    setNotification('success', `Great News! Your order was successfully generated! Order N# ${id}`)
                 })
             }).catch(error => {
                 setNotification('error', error)
@@ -149,7 +149,7 @@ const Cart = ({ item }) => {
                     </div>
                     <SeparationLine />
                     <button className='BtnDelete' onClick={() => ClearProducts()}> DELETE ORDER </button>
-                    <button className='BtnConfirm' onClick={() => confirmOrder()} disabled={!productsLength} > CONFIRM ORDER </button>
+                    <button className='BtnConfirm' onClick={() => confirmOrder()} disabled={!productsLength} > START SHOPPING </button>
                 </div>
 
             </div>

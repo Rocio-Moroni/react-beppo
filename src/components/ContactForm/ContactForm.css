@@ -110,9 +110,9 @@
 	font-size: 12px;
 }
 
-/*  Selector de forma de pago.
+/*  Payform selector.
 // Switcher. */
-.Switch[type=radio] {
+/* .Switch[type=radio] {
     position: absolute;
     visibility: hidden;
     display: none;
@@ -132,17 +132,18 @@
     width: 215px;
     text-align: center;
     border: solid 1px rgb(236, 236, 236);
-}
+} */
 
     /* Seleccionado cambia de color */
-    .Switch[type=radio]:checked + .SwitcherColor {
+    .Field[type=radio]:checked + label {
         color: black;
         background: rgb(216, 216, 216);
     }
     /* Linea de separacion */
-    .SwitcherColor + .Switch[type=radio] + .SwitcherColor {
+    label + .Field[type=radio] + label {
     border-left: solid 1px rgb(236, 236, 236);
     }
+    
 
 
 /* Button */
@@ -164,7 +165,12 @@
     cursor: pointer;
 }
 
-
+.success {
+    text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	color: #02a802;
+}
 
 
 

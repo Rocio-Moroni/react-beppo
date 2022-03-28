@@ -10,15 +10,16 @@ import { useState, createContext, useContext } from 'react';
 // Notification component.
 const Notification = ({ message, severity }) => {
     const notificationStyles = {
-        position: 'sticky',
-        top: '0.5px',
         display: 'flex',
+        position: 'fixed',
+        top: '0.5px',
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
         height: 'auto',
         padding: '10px 20px 10px 20px',
         color: 'white',
+        zIndex: '5',
     }
 
     const config = true ?

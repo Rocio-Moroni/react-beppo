@@ -39,7 +39,7 @@ const ItemDetail = ({ product, id, itemName, stock, price, dimensions, img, img1
     const onAdd = (count) => {
         setCount(count);
         AddItemToCart({...productToAdd}, count);
-        setNotification('success', `${itemName} was successfully added to your Shopping Cart!`);
+        setNotification('success', `Good News! ${itemName} was successfully added to your Shopping Cart!`);
     };
 
     // Selected hook

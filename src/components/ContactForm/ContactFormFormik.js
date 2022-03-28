@@ -1,6 +1,8 @@
 /* IMPORTS */
+
 // CSS import
-import ContactForm from './ContactForm.css';
+import './ContactForm.css';
+import { useNotificationServices } from '../../services/notification/NotificationServices';
 // React import
 import React, {useState} from 'react';
 // Formik import
@@ -12,6 +14,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 // CrontactForm component
 const ContactFormFormik = () => {
     const [sentForm, setSentForm] = useState(false);
+    const setNotification = useNotificationServices();
+
     return (
         <Formik
             initialValues={{
@@ -28,7 +32,8 @@ const ContactFormFormik = () => {
                 credit:'',
                 cardName:'',
                 cardNumber:'',
-                cardExpiration:'',
+                cardExpirationMonth:'',
+                cardExpirationYear:'',
                 cardCvv:'',
             }}
             validate={(info) => {
@@ -51,7 +56,7 @@ const ContactFormFormik = () => {
                 //Phone validation.([0-9]+){9}$
                 if(!info.phone) {
                     errors.phone = 'Please check your phone number'
-                } else if (!/^\d{10}$/.test(info.phone)) {
+                } else if (!/^\d{3,10}$/.test(info.phone)) {
                     errors.phone = 'This field can only contain numbers'
                 };
 
@@ -86,14 +91,14 @@ const ContactFormFormik = () => {
                 //Area Code validation.
                 if(!info.areaCode) {
                     errors.areaCode = 'Please write your code area'
-                } else if (!/^\d{10}$/.test(info.areaCode)) {
+                } else if (!/^\d{1,10}$/.test(info.areaCode)) {
                     errors.areaCode = 'This field can only contain numbers'
                 };
 
                 //Comments validation.
                 if(!info.comments) {
                     errors.comments = 'Please write additional details and preferences for us'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{50}$/.test(info.comments)) {
+                } else if (!/^[a-zA-ZÀ-ÿ\s]{0,50}$/.test(info.comments)) {
                     errors.comments = 'This field can only a maximum of 50 characters'
                 };
 
@@ -107,21 +112,27 @@ const ContactFormFormik = () => {
                 //Card Number validation.
                 if(!info.cardNumber) {
                     errors.cardNumber = 'Please write your card number'
-                } else if (!/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35d{3})d{11})$/.test(info.cardNumber)) {
+                } else if (!/^\d{1,20}$/.test(info.cardNumber)) {
                     errors.cardNumber = 'This field can only contain numbers'
                 };
 
-                //Card Expiration date validation.
-                if(!info.cardExpiration) {
+                //Card Expiration Month validation.
+                if(!info.cardExpirationMonth) {
                     errors.cardExpiration = 'Please write your card expiration date'
-                } else if (!/^\d{4}$/.test(info.cardExpiration)) {
+                } else if (!/^\d{2,4}$/.test(info.cardExpirationMonth)) {
+                    errors.cardExpiration = 'This field can only contain numbers'
+                };
+                //Card Expiration Year validation.
+                if(!info.cardExpirationYear) {
+                    errors.cardExpiration = 'Please write your card expiration date'
+                } else if (!/^\d{2,4}$/.test(info.cardExpirationYear)) {
                     errors.cardExpiration = 'This field can only contain numbers'
                 };
 
                 //Card CVV validation.
                 if(!info.cardCvv) {
                     errors.cardCvv = 'Please write your card CVV'
-                } else if (!/^\d{4}$/.test(info.cardCvv)) {
+                } else if (!/^\d{3}$/.test(info.cardCvv)) {
                     errors.cardCvv = 'This field can only contain numbers'
                 };
 
@@ -129,10 +140,11 @@ const ContactFormFormik = () => {
             }}
             onSubmit={(info, {resetForm}) => {
                 resetForm();
+                setNotification('success', `Your order was successfully delivered!`);
                 setSentForm(true);
-                setTimeout(() => {
+                setTimeout(() =>
                     setSentForm(false)
-                }, 5000);
+                , 5000);
             }}
         >
             {( {errors} )=> (
@@ -267,13 +279,13 @@ const ContactFormFormik = () => {
                         <div>
                             <div className='Payments'>
                                 <div className=''>
-                                    <Field type='radio' value='payments'/> 3 Payments
+                                    <Field type='radio' value='3payments' name='payment'/> 3 Payments
                                 </div>
                                 <div className=''>
-                                    <Field type='radio' value='payments'/> 6 Payments
+                                    <Field type='radio' value='6payments' name='payment'/> 6 Payments
                                 </div>
                                 <div className=''>
-                                    <Field type='radio' value='payments'/> 12 Payments
+                                    <Field type='radio' value='12payments' name='payment'/> 12 Payments
                                 </div>
                             </div>
 
@@ -309,15 +321,15 @@ const ContactFormFormik = () => {
                                     <div className='Pay'>
                                         <Field
                                             type='number'
-                                            id='cardExpiration'
-                                            name='cardExpiration'
+                                            id='cardExpirationMonth'
+                                            name='cardExpirationMonth'
                                             placeholder='MM'
                                             className='Width Date'
                                         />
                                         <Field
                                             type='number'
-                                            id='cardExpiration'
-                                            name='cardExpiration'
+                                            id='cardExpirationYear'
+                                            name='cardExpirationYear'
                                             placeholder='YY'
                                             className='Width Date'
                                         />
@@ -340,17 +352,16 @@ const ContactFormFormik = () => {
                         </div>
 
                         <div className='FormButtonsPosition'>
-                            <button className='FormButtons'> Delete Data </button>
-                            <button className='FormButtons' type="submit"> Confirm Booking </button>
-                            {sentForm && <p className="success"> Formulario enviado con exito! </p>}
+                            <button className='FormButtons' type='reset'> RESET </button>
+                            <button className='FormButtons' type='submit'> CONFIRM PAYMENT </button>
                         </div>
 
                     </div>
                 </Form>
-            )}
 
+            )}
         </Formik>
-    )
+    );
 }
 
 export default ContactFormFormik;
