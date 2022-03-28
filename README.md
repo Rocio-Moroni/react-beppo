@@ -40,7 +40,8 @@ The company is in a constant development of new products, which was taken into c
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648323614/BEPPO/ICONS/firebase_ykuull.png" /> &nbsp; &nbsp;
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338765/BEPPO/ICONS/github-2_lmx8uu.png" /> &nbsp; &nbsp;
 <img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338221/BEPPO/ICONS/css3-2_a6yzw9.png" /> &nbsp;
-<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338308/BEPPO/ICONS/javascript_birp8o.png" />
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648338308/BEPPO/ICONS/javascript_birp8o.png" /> &nbsp; &nbsp;
+<img src="https://res.cloudinary.com/dfprmjlir/image/upload/c_scale,w_60/v1648444012/BEPPO/ICONS/formik_n6tqjl.svg" />
 
 </div>
 

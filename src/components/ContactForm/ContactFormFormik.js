@@ -2,19 +2,88 @@
 
 // CSS import
 import './ContactForm.css';
+// Component import
+import CartContext from '../../context/CartContext';
 import { useNotificationServices } from '../../services/notification/NotificationServices';
 // React import
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+// Firebase import
+import { writeBatch, getDoc, doc, addDoc, collection, Timestamp } from 'firebase/firestore';
 // Formik import
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { firestoreDb } from '../../services/firebase/Firebase';
 
 
 /* COMPONENTS */
 
 // CrontactForm component
 const ContactFormFormik = () => {
+
+    // Creation of a state for obtaining the amount of products we've got in our cart.
+    const [productsLength, setProductsLength] = useState(0);
+    // We bring from CartContext the products from the shopping cart.
+    const { cartItems, DeleteItemFromCart } = useContext(CartContext);
+
     const [sentForm, setSentForm] = useState(false);
     const setNotification = useNotificationServices();
+
+
+    // Calculation of the total price.
+    const total = cartItems.reduce(
+        (previous, current) => previous + current.quantity * current.price, 0
+    );
+
+    // Confirmation of order (payment).
+    const confirmOrder = ({initialValues}) => {
+        const objOrder = {
+            buyer: {
+                name: initialValues.lastName,
+                phone: initialValues.phone,
+                email: initialValues.email,
+                country: initialValues.country,
+                city: initialValues.city,
+                address: initialValues.address,
+                areaCode: initialValues.areaCode,
+                comments: initialValues.comments,
+                payForm: initialValues.payForm
+            },
+            items: cartItems,
+            total: total,
+            date: Timestamp.fromDate(new Date())
+        };
+
+        const batch = writeBatch(firestoreDb);
+        const outOfStock = [];
+
+        objOrder.items.forEach(prod => {
+            getDoc(doc(firestoreDb, 'products', prod.id)).then(response => {
+                if (response.data().stock >= prod.quantity) {
+                    batch.update(doc(firestoreDb, 'products', response.id), {
+                        stock: response.data().stock - prod.quantity
+                    });
+                } else {
+                    outOfStock.push({ id: response.id, ...response.data})
+                }
+            })
+        })
+
+            if (outOfStock.length === 0) {
+                addDoc(collection(firestoreDb, 'orders'), objOrder).then(({id}) => {
+                    batch.commit().then(() => {
+                        setNotification('success', `Great News! Your order was successfully delivered! Order N#${id}`)
+                    })
+                }).catch(error => {
+                    setNotification('error', error)
+                })
+            } else {
+                outOfStock.forEach(prod => {
+                    setNotification('error', `We are sorry! The product ${prod.itemName} is out of stock`);
+                    DeleteItemFromCart(prod.itemName);
+                });
+            };
+
+    };
+
 
     return (
         <Formik
@@ -36,6 +105,7 @@ const ContactFormFormik = () => {
                 cardExpirationYear:'',
                 cardCvv:'',
             }}
+            
             validate={(info) => {
                 let errors = {};
 
@@ -140,7 +210,8 @@ const ContactFormFormik = () => {
             }}
             onSubmit={(info, {resetForm}) => {
                 resetForm();
-                setNotification('success', `Your order was successfully delivered!`);
+                // confirmOrder(); QUIERO AGREGAR ACA ESTA FUNCION PERO DA ERROR.
+                setNotification('success', `este mensaje funciona pero no es el de ConfirmOrder, por lo tanto no se esta generando la orden en Firebase`);
                 setSentForm(true);
                 setTimeout(() =>
                     setSentForm(false)
@@ -353,7 +424,7 @@ const ContactFormFormik = () => {
 
                         <div className='FormButtonsPosition'>
                             <button className='FormButtons' type='reset'> RESET </button>
-                            <button className='FormButtons' type='submit'> CONFIRM PAYMENT </button>
+                            <button className='FormButtons' type='submit' > CONFIRM PAYMENT </button>
                         </div>
 
                     </div>
