@@ -10,7 +10,7 @@ import React, {useState, useContext} from 'react';
 // Firebase import
 import { writeBatch, getDoc, doc, addDoc, collection, Timestamp } from 'firebase/firestore';
 // Formik import
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
 import { firestoreDb } from '../../services/firebase/Firebase';
 
 
@@ -98,14 +98,13 @@ const ContactFormFormik = () => {
                 areaCode:'',
                 comments:'',
                 payForm:'',
-                credit:'',
+                payment:'',
                 cardName:'',
                 cardNumber:'',
                 cardExpirationMonth:'',
                 cardExpirationYear:'',
                 cardCvv:'',
             }}
-            
             validate={(info) => {
                 let errors = {};
 
@@ -209,6 +208,7 @@ const ContactFormFormik = () => {
                 return errors;
             }}
             onSubmit={(info, {resetForm}) => {
+                console.log(info)
                 resetForm();
                 // confirmOrder(); QUIERO AGREGAR ACA ESTA FUNCION PERO DA ERROR.
                 setNotification('success', `este mensaje funciona pero no es el de ConfirmOrder, por lo tanto no se esta generando la orden en Firebase`);
