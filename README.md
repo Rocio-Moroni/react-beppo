@@ -75,6 +75,7 @@ The company is in a constant development of new products, which was taken into c
 
 - **[React Router (v6.2.1)](https://reactrouter.com/docs/en/v6)** It facilitates the navigability and grants a dynamic routing to the application.
 - **[React Icons](https://react-icons.github.io/react-icons/)** Allows you to include popular icons in your React projects easily, which utilizes ES6 imports that gives you the opportunity to only include the icons that your project is using.
+- **[Formik](https://formik.org)** Formik is the world's most popular open source form library for React and React Native. It comes with battle-tested solutions for input validation, formatting, masking, arrays, and error handling.
 - **[Firebase (v9.6.7)](https://firebase.google.com)** It is a service provided by Google to meet the different needs that an application and its development cycle may have, within which we find:
     - Security and authentication.
     - Storage and Query.
