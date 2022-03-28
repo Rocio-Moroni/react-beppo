@@ -208,7 +208,7 @@ const ContactFormFormik = () => {
                 return errors;
             }}
             onSubmit={(info, {resetForm}) => {
-                console.log(info)
+                console.log(info); // EL CONSOLE LOG ME MUESTRA LOS DATOS INSERTADOS POR EL USUARIO.
                 resetForm();
                 // confirmOrder(); QUIERO AGREGAR ACA ESTA FUNCION PERO DA ERROR.
                 setNotification('success', `este mensaje funciona pero no es el de ConfirmOrder, por lo tanto no se esta generando la orden en Firebase`);
