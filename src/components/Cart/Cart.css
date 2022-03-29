@@ -92,3 +92,7 @@
 .FormOrder {
     height: 100vh;
 }
+
+.OrderInProcess {
+    margin-top: 25%;
+}

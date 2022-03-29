@@ -1,5 +1,7 @@
 /* IMPORTS */
 
+// Component import
+import { useNotificationServices } from '../services/notification/NotificationServices';
 // React import
 import { createContext, useEffect, useState } from 'react';
 
@@ -10,6 +12,8 @@ import { createContext, useEffect, useState } from 'react';
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+    const setNotification = useNotificationServices();
+
     // Creation of a state for our shopping cart.
     const [cartItems, setCartItems] = useState(() => {
 
@@ -82,6 +86,7 @@ export const CartProvider = ({ children }) => {
     // Function for removing all products from the shopping cart.
     const ClearProducts = () => {
         setCartItems([])
+        setNotification('error', `Your Shopping Cart was deleted`);
     };
 
     // Function for removing a product from the cart, leaving the other products which were not removed.

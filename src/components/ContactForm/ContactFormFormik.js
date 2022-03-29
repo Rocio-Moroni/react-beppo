@@ -3,87 +3,127 @@
 // CSS import
 import './ContactForm.css';
 // Component import
-import CartContext from '../../context/CartContext';
 import { useNotificationServices } from '../../services/notification/NotificationServices';
-// React import
-import React, {useState, useContext} from 'react';
-// Firebase import
-import { writeBatch, getDoc, doc, addDoc, collection, Timestamp } from 'firebase/firestore';
 // Formik import
-import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
-import { firestoreDb } from '../../services/firebase/Firebase';
+import { Formik, Form, Field } from 'formik';
 
 
 /* COMPONENTS */
 
-// CrontactForm component
-const ContactFormFormik = () => {
+// Inputs validation:
+const validateFirstName = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your first name';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(value)) {
+        error = 'This field can only contain letters and spaces';
+    }
+    return error;
+}
 
-    // Creation of a state for obtaining the amount of products we've got in our cart.
-    const [productsLength, setProductsLength] = useState(0);
-    // We bring from CartContext the products from the shopping cart.
-    const { cartItems, DeleteItemFromCart } = useContext(CartContext);
+const validateLastName = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your last name';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(value)) {
+        error = 'This field can only contain letters and spaces';
+    }
+    return error;
+}
 
-    const [sentForm, setSentForm] = useState(false);
+const validatePhone = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your phone number';
+    } else if (!/^\d+$/.test(value)) {
+        error = 'This field can only contain numbers';
+    }
+    return error;
+}
+
+const validateEmail = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your e-mail address';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+        error = 'Invalid e-mail address';
+    }
+    return error;
+}
+
+const validateCountry = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your country name';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(value)) {
+        error = 'This field can only contain letters and spaces';
+    }
+    return error;
+}
+
+const validateCity = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your city name';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(value)) {
+        error = 'This field can only contain letters and spaces';
+    }
+    return error;
+}
+
+const validateAddress = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your address';
+    } else if (!/^[A-Za-z0-9\s]+$/g.test(value)) {
+        error = 'This field can only contain letters, spaces and numbers';
+    }
+    return error;
+}
+
+const validateAreaCode = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your area code';
+    } else if (!/^\d+$/.test(value)) {
+        error = 'This field can only contain numbers';
+    }
+    return error;
+}
+
+const validateCardName = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your card name';
+    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(value)) {
+        error = 'This field can only contain letters and spaces';
+    }
+    return error;
+}
+
+const validateCardNumber = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your card number';
+    } else if (!/^\d{1,20}$/.test(value)) {
+        error = 'This field can only contain numbers, maximum 20 characters';
+    }
+    return error;
+}
+
+const validateCardCvv = value => {
+    let error;
+    if (!value) {
+        error = 'Please write your card CVV';
+    } else if (!/^\d{3}$/.test(value)) {
+        error = 'This field can only contain numbers, maximum 3 characters';
+    }
+    return error;
+}
+
+// ContactForm component
+const ContactFormFormik = ({ contactFormRef, setContactInfo }) => {
     const setNotification = useNotificationServices();
-
-
-    // Calculation of the total price.
-    const total = cartItems.reduce(
-        (previous, current) => previous + current.quantity * current.price, 0
-    );
-
-    // Confirmation of order (payment).
-    const confirmOrder = ({initialValues}) => {
-        const objOrder = {
-            buyer: {
-                name: initialValues.lastName,
-                phone: initialValues.phone,
-                email: initialValues.email,
-                country: initialValues.country,
-                city: initialValues.city,
-                address: initialValues.address,
-                areaCode: initialValues.areaCode,
-                comments: initialValues.comments,
-                payForm: initialValues.payForm
-            },
-            items: cartItems,
-            total: total,
-            date: Timestamp.fromDate(new Date())
-        };
-
-        const batch = writeBatch(firestoreDb);
-        const outOfStock = [];
-
-        objOrder.items.forEach(prod => {
-            getDoc(doc(firestoreDb, 'products', prod.id)).then(response => {
-                if (response.data().stock >= prod.quantity) {
-                    batch.update(doc(firestoreDb, 'products', response.id), {
-                        stock: response.data().stock - prod.quantity
-                    });
-                } else {
-                    outOfStock.push({ id: response.id, ...response.data})
-                }
-            })
-        })
-
-            if (outOfStock.length === 0) {
-                addDoc(collection(firestoreDb, 'orders'), objOrder).then(({id}) => {
-                    batch.commit().then(() => {
-                        setNotification('success', `Great News! Your order was successfully delivered! Order N#${id}`)
-                    })
-                }).catch(error => {
-                    setNotification('error', error)
-                })
-            } else {
-                outOfStock.forEach(prod => {
-                    setNotification('error', `We are sorry! The product ${prod.itemName} is out of stock`);
-                    DeleteItemFromCart(prod.itemName);
-                });
-            };
-
-    };
-
 
     return (
         <Formik
@@ -105,120 +145,13 @@ const ContactFormFormik = () => {
                 cardExpirationYear:'',
                 cardCvv:'',
             }}
-            validate={(info) => {
-                let errors = {};
-
-                //First Name validation.^[a-zA-Z\u00C0-\u017F\s]+$
-                if(!info.firstName) {
-                    errors.firstName = 'Please write your first name'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(info.firstName)) {
-                    errors.firstName = 'This field can only contain letters and spaces'
-                };
-
-                //Last Name validation.
-                if(!info.lastName) {
-                    errors.lastName = 'Please write your last name'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(info.lastName)) {
-                    errors.lastName = 'This field can only contain letters and spaces'
-                };
-
-                //Phone validation.([0-9]+){9}$
-                if(!info.phone) {
-                    errors.phone = 'Please check your phone number'
-                } else if (!/^\d{3,10}$/.test(info.phone)) {
-                    errors.phone = 'This field can only contain numbers'
-                };
-
-                //email validation.
-                if(!info.email) {
-                    errors.email = 'Please write your email address'
-                } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(info.email)) {
-                    errors.email = 'This field can only contain letters, numbers, periods, hyphens and underscores'
-                };
-
-                //Country validation.
-                if(!info.country) {
-                    errors.country = 'Please write your country name'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(info.country)) {
-                    errors.country = 'This field can only contain letters and spaces'
-                };
-
-                //City validation.
-                if(!info.city) {
-                    errors.city = 'Please write your city name'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(info.city)) {
-                    errors.city = 'This field can only contain letters and spaces'
-                };
-
-                //Address validation./^[A-Za-z0-9\s]+$/g
-                if(!info.address) {
-                    errors.address = 'Please write your address'
-                } else if (!/^[A-Za-z0-9\s]+$/g.test(info.address)) {
-                    errors.address = 'This field can only contain letters, spaces and numbers'
-                };
-
-                //Area Code validation.
-                if(!info.areaCode) {
-                    errors.areaCode = 'Please write your code area'
-                } else if (!/^\d{1,10}$/.test(info.areaCode)) {
-                    errors.areaCode = 'This field can only contain numbers'
-                };
-
-                //Comments validation.
-                if(!info.comments) {
-                    errors.comments = 'Please write additional details and preferences for us'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{0,50}$/.test(info.comments)) {
-                    errors.comments = 'This field can only a maximum of 50 characters'
-                };
-
-                //Card Name validation.
-                if(!info.cardName) {
-                    errors.cardName = 'Please write your card name'
-                } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(info.cardName)) {
-                    errors.cardName = 'This field can only contain letters and spaces'
-                };
-
-                //Card Number validation.
-                if(!info.cardNumber) {
-                    errors.cardNumber = 'Please write your card number'
-                } else if (!/^\d{1,20}$/.test(info.cardNumber)) {
-                    errors.cardNumber = 'This field can only contain numbers'
-                };
-
-                //Card Expiration Month validation.
-                if(!info.cardExpirationMonth) {
-                    errors.cardExpiration = 'Please write your card expiration date'
-                } else if (!/^\d{2,4}$/.test(info.cardExpirationMonth)) {
-                    errors.cardExpiration = 'This field can only contain numbers'
-                };
-                //Card Expiration Year validation.
-                if(!info.cardExpirationYear) {
-                    errors.cardExpiration = 'Please write your card expiration date'
-                } else if (!/^\d{2,4}$/.test(info.cardExpirationYear)) {
-                    errors.cardExpiration = 'This field can only contain numbers'
-                };
-
-                //Card CVV validation.
-                if(!info.cardCvv) {
-                    errors.cardCvv = 'Please write your card CVV'
-                } else if (!/^\d{3}$/.test(info.cardCvv)) {
-                    errors.cardCvv = 'This field can only contain numbers'
-                };
-
-                return errors;
-            }}
-            onSubmit={(info, {resetForm}) => {
-                console.log(info); // EL CONSOLE LOG ME MUESTRA LOS DATOS INSERTADOS POR EL USUARIO.
-                resetForm();
-                // confirmOrder(); QUIERO AGREGAR ACA ESTA FUNCION PERO DA ERROR.
-                setNotification('success', `este mensaje funciona pero no es el de ConfirmOrder, por lo tanto no se esta generando la orden en Firebase`);
-                setSentForm(true);
-                setTimeout(() =>
-                    setSentForm(false)
-                , 5000);
+            onSubmit={values => {
+                setContactInfo(values);
+                setNotification('success', `Good Job! Your contact and payment information is okey! Please send your order`);
+                // contactFormRef.current.toggleVisibility();
             }}
         >
-            {( {errors} )=> (
+            {( { errors, touched } )=> (
                 <Form className='ContactForm'>
                     <div className='ContactInformation'>
                         <h4 className='ContactInformationTitle'> Contact Information </h4>
@@ -230,9 +163,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='firstName'
                                     name='firstName'
+                                    validate= {validateFirstName}
                                     className='TextArea'
                                 />
-                                <ErrorMessage name='firstName' component={() => (<div className="error">{errors.firstName}</div>)} />
+                                {errors.firstName && touched.firstName && <div className='error'>{errors.firstName}</div>}
                             </div>
                             <div className='Col'>
                                 <label htmlFor='lastName' className='FormLabel Space'> Last Name </label>
@@ -240,9 +174,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='lastName'
                                     name='lastName'
+                                    validate= {validateLastName}
                                     className='Space TextArea'
                                 />
-                                <ErrorMessage name='lastName' component={() => (<div className="error">{errors.lastName}</div>)} />
+                                {errors.lastName && touched.lastName && <div className='error'>{errors.lastName}</div>}
                             </div>
                         </div>
 
@@ -253,9 +188,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='phone'
                                     name='phone'
+                                    validate= {validatePhone}
                                     className='TextArea'
                                 />
-                                <ErrorMessage name='phone' component={() => (<div className="error">{errors.phone}</div>)} />
+                                {errors.phone && touched.phone && <div className='error'>{errors.phone}</div>}
                             </div>
                             <div className='Col'>
                                 <label htmlFor='email' className='FormLabel Space'> Email </label>
@@ -263,9 +199,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='email'
                                     name='email'
+                                    validate= {validateEmail}
                                     className='Space TextArea'
                                 />
-                                <ErrorMessage name='email' component={() => (<div className="error">{errors.email}</div>)} />
+                                {errors.email && touched.email && <div className='error'>{errors.email}</div>}
                             </div>
                         </div>
 
@@ -276,9 +213,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='country'
                                     name='country'
+                                    validate= {validateCountry}
                                     className='TextArea'
                                 />
-                                <ErrorMessage name='country' component={() => (<div className="error">{errors.country}</div>)} />
+                                {errors.country && touched.country && <div className='error'>{errors.country}</div>}
                             </div>
                             <div className='Col'>
                                 <label htmlFor='city' className='FormLabel Space'> City </label>
@@ -286,9 +224,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='city'
                                     name='city'
+                                    validate= {validateCity}
                                     className='Space TextArea'
                                 />
-                                <ErrorMessage name='city' component={() => (<div className="error">{errors.city}</div>)} />
+                                {errors.city && touched.city && <div className='error'>{errors.city}</div>}
                             </div>
                         </div>
 
@@ -299,9 +238,10 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='address'
                                     name='address'
+                                    validate= {validateAddress}
                                     className='TextArea'
                                 />
-                                <ErrorMessage name='address' component={() => (<div className="error">{errors.address}</div>)} />
+                                {errors.address && touched.address && <div className='error'>{errors.address}</div>}
                             </div>
                             <div className='Col'>
                                 <label htmlFor='areaCode' className='FormLabel Space'> Area Code </label>
@@ -309,22 +249,22 @@ const ContactFormFormik = () => {
                                     type='text'
                                     id='areaCode'
                                     name='areaCode'
+                                    validate= {validateAreaCode}
                                     className='Space TextArea'
                                 />
-                                <ErrorMessage name='areaCode' component={() => (<div className="error">{errors.areaCode}</div>)} />
+                                {errors.areaCode && touched.areaCode && <div className='error'>{errors.areaCode}</div>}
                             </div>
                         </div>
 
                         <div className='FormRow'>
                             <div className='Col'>
-                                <label htmlFor='comments' className='FormLabel'> Additional details and preferences </label>
+                                <label htmlFor='comments' className='FormLabel'> Additional details and preferences (optional)</label>
                                 <Field
                                     type='text'
                                     id='comments'
                                     name='comments'
                                     className='TextArea Comments'
                                 />
-                                <ErrorMessage name='comments' component={() => (<div className="error">{errors.comments}</div>)} />
                             </div>
                         </div>
 
@@ -337,12 +277,20 @@ const ContactFormFormik = () => {
                         <div className='FormRow PayForm'>
                             <div>
                                 <label className='SwitcherColor'>
-                                    <Field type="radio" name='payForm' value='credit' className='Switch'/> Credit Card
+                                    <Field
+                                        type="radio"
+                                        name='payForm'
+                                        value='credit'
+                                        className='Switch'/> Credit Card
                                 </label>
                             </div>
                             <div className='Col2'>
                                 <label className='SwitcherColor'>
-                                    <Field type="radio" name='payForm' value='wire' className='Switch'/> Wire Transfer
+                                    <Field
+                                        type="radio"
+                                        name='payForm'
+                                        value='wire'
+                                        className='Switch'/> Wire Transfer
                                 </label>
                             </div>
                         </div>
@@ -367,9 +315,10 @@ const ContactFormFormik = () => {
                                         type='text'
                                         id='cardName'
                                         name='cardName'
+                                        validate= {validateCardName}
                                         className='Width TextArea'
                                     />
-                                    <ErrorMessage name='cardName' component={() => (<div className="error">{errors.cardName}</div>)} />
+                                {errors.cardName && touched.cardName && <div className='error'>{errors.cardName}</div>}
                                 </div>
                             </div>
 
@@ -380,9 +329,10 @@ const ContactFormFormik = () => {
                                         type='text'
                                         id='cardNumber'
                                         name='cardNumber'
+                                        validate= {validateCardNumber}
                                         className='Width TextArea'
                                     />
-                                    <ErrorMessage name='cardNumber' component={() => (<div className="error">{errors.cardNumber}</div>)} />
+                                {errors.cardNumber && touched.cardNumber && <div className='error'>{errors.cardNumber}</div>}
                                 </div>
                             </div>
 
@@ -415,16 +365,17 @@ const ContactFormFormik = () => {
                                         type='text'
                                         id='cardCvv'
                                         name='cardCvv'
+                                        validate= {validateCardCvv}
                                         className='Width TextArea'
                                     />
-                                    <ErrorMessage name='cardCvv' component={() => (<div className="error">{errors.cardCvv}</div>)} />
+                                {errors.cardCvv && touched.cardCvv && <div className='error'>{errors.cardCvv}</div>}
                                 </div>
                             </div>
                         </div>
 
                         <div className='FormButtonsPosition'>
-                            <button className='FormButtons' type='reset'> RESET </button>
-                            <button className='FormButtons' type='submit' > CONFIRM PAYMENT </button>
+                            <button className='FormButtons' type='reset'> RESET FORM </button>
+                            <button className='FormButtons' type='submit'> CONFIRM FORM </button>
                         </div>
 
                     </div>

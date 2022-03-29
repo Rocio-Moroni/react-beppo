@@ -76,7 +76,6 @@ const ItemDetail = ({ product, id, itemName, stock, price, dimensions, img, img1
                             <div className='multi-button'>
                                 <Link to="/"> <button> Continue Shopping </button> </Link>
                                 <Link to="/cart"> <button> View Shopping Cart </button> </Link>
-                                <Link to="/cart"> <button> Finish Shopping </button> </Link>
                             </div>
                     ):(
                         <ItemCount className='ItemCount' stock={stock} initial={1} onAdd={onAdd} />
