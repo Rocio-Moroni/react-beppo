@@ -66,7 +66,7 @@ const Cart = () => {
     // Confirmation of order.
     const confirmOrder = () => {
 
-        if (contactInfo.firstName !=='' && contactInfo.lastName !=='' && contactInfo.phone !=='' && contactInfo.email !=='' && contactInfo.country !=='' && contactInfo.city !=='' && contactInfo.address !=='' && contactInfo.areaCode !=='' && contactInfo.payForm)  {
+        if (contactInfo.firstName !=='' && contactInfo.lastName !=='' && contactInfo.phone !=='' && contactInfo.email !=='' && contactInfo.country !=='' && contactInfo.city !=='' && contactInfo.address !=='' && contactInfo.areaCode !=='' && contactInfo.payForm !=='')  {
             setProcessingOrder(true)
 
             const newOrder = {
