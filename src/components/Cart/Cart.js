@@ -23,7 +23,6 @@ import { firestoreDb } from '../../services/firebase/Firebase';
 
 // Cart component
 const Cart = () => {
-
     // We bring from CartContext the products from the shopping cart.
     const { cartItems, ClearProducts, removeProducts } = useContext(CartContext);
 
@@ -63,10 +62,9 @@ const Cart = () => {
         (previous, current) => previous + current.quantity * current.price, 0
     );
 
-    // Confirmation of order.
     const confirmOrder = () => {
+        if(contactInfo.firstName !=='' && contactInfo.lastName !=='' && contactInfo.phone !=='' && contactInfo.email !=='' && contactInfo.country !=='' && contactInfo.city !=='' && contactInfo.address !=='' && contactInfo.areaCode !=='' && contactInfo.payForm)  {
 
-        if (contactInfo.firstName !=='' && contactInfo.lastName !=='' && contactInfo.phone !=='' && contactInfo.email !=='' && contactInfo.country !=='' && contactInfo.city !=='' && contactInfo.address !=='' && contactInfo.areaCode !=='' && contactInfo.payForm !=='')  {
             setProcessingOrder(true)
 
             const newOrder = {
@@ -76,55 +74,47 @@ const Cart = () => {
                 date: Timestamp.fromDate(new Date()),
             }
 
-            const batch = writeBatch(firestoreDb);
-            const outOfStock = [];
+            const batch = writeBatch(firestoreDb)
+            const outOfStock = []
 
-            const ids = newOrder.items.map(i => i.id)
-
-            getDocs(query(collection(firestoreDb, 'products'),where(documentId(), 'in', ids)))
-            .then(response => {
-                response.docs.forEach((docSnapshot) => {
-                    if(docSnapshot.data().stock >= newOrder.items.find(prod => prod.id === docSnapshot.id).quantity) {
-                        batch.update(doc(firestoreDb, 'products', docSnapshot.id), {
-                            stock: docSnapshot.data().stock - newOrder.items.find(prod => prod.id === docSnapshot.id).quantity
+            newOrder.items.forEach(prod => {
+                getDoc(doc(firestoreDb, 'products', prod.id)).then(response => {
+                    if(response.data().stock >= prod.quantity) {
+                        batch.update(doc(firestoreDb, 'products', response.id), {
+                            stock: response.data().stock - prod.quantity
                         })
                     } else {
-                        outOfStock.push({id: docSnapshot.id, ...docSnapshot.data()})
+                        outOfStock.push({ id: response.id, ...response.data()})
                     }
                 })
-            }).then(() => {
-                executeOrder();
-            }).catch((error) => {
-                setNotification(error, 'error 1')
-            }).finally(() => {
-                setProcessingOrder(false);
-            });
+            })
 
-            const executeOrder = () => {
-                if(outOfStock.length === 0) {
-                    addDoc(collection(firestoreDb, 'orders'), newOrder).then(({id}) => {
-                        batch.commit();
-                        setSentForm(id);
-                        ClearProducts();
-                        setNotification('success', `Great News! Your order was successfully generated! Order N# ${id}`);
-                    }).catch(error => {
-                        setNotification(error, 'error 2');
+            if(outOfStock.length === 0) {
+                addDoc(collection(firestoreDb, 'orders'), newOrder).then(({id}) => {
+                    batch.commit().then(() => {
+                        ClearProducts()
+                        setNotification('success', `Great News! Your order was successfully generated! Order N# ${id}`)
                     })
-                } else {
-                    outOfStock.forEach(prod => {
-                        setNotification('error', `We are sorry! The amount of ${prod.itemName} that you added to the shopping cart exceeds its stock: ${prod.stock}`)
-                        removeProducts();
-                    })
-                }
+                }).catch(error => {
+                    setNotification('error', error)
+                }).finally(() => {
+                    setProcessingOrder(false)
+                })
+            } else {
+                outOfStock.forEach(prod => {
+                    setNotification('error', `We are sorry! The amount of ${prod.itemName} that you added to the shopping cart exceeds its stock: ${prod.stock}`)
+                    removeProducts(prod.id)
+                })
             }
         } else {
             setNotification('error', 'Please, you must first click Start Buying button to fill in the form with your contact information for initializing your payment')
         }
     }
 
-        if(processingOrder) {
-            return <h3 className='OrderInProcess'> SHOPPING ORDER IN PROCESS, PLEASE WAIT...</h3>
-        }
+    if(processingOrder) {
+        return <h1>Se esta procesando su orden</h1>
+    }
+
 
         return (
         <>
