@@ -54,7 +54,7 @@ The company is in a constant development of new products, which was taken into c
 ![Project Image](https://res.cloudinary.com/dfprmjlir/video/upload/v1648661109/BEPPO/ICONS/reducido_djhcrk.mov) <br />
 > Buying products.
 
-https://github.com/Rocio-Moroni/react-beppo/issues/1#issue-1186626412
+![gif]https://github.com/Rocio-Moroni/react-beppo/issues/1#issue-1186626412
 
 ---
 
