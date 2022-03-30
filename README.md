@@ -51,7 +51,7 @@ The company is in a constant development of new products, which was taken into c
 ---
 
 ### GIF
-![gif](https://github.com/Rocio-Moroni/react-beppo/issues/1#issue-1186626412) <br />
+![gif](https://user-images.githubusercontent.com/89430084/160871565-7b805bbf-50ff-42d3-8e5d-12e035988bb4.gif) <br />
 > Buying products.
 
 ---
