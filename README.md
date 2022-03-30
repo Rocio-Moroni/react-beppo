@@ -51,7 +51,7 @@ The company is in a constant development of new products, which was taken into c
 ---
 
 ### GIF
-![gif](https://user-images.githubusercontent.com/89430084/160871565-7b805bbf-50ff-42d3-8e5d-12e035988bb4.gif) <br />
+![gif](http://res.cloudinary.com/dfprmjlir/video/upload/c_scale,w_1000/v1648661109/BEPPO/ICONS/reducido_djhcrk.mov) <br />
 > Buying products.
 
 ---
